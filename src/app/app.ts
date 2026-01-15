@@ -1,4 +1,4 @@
-import { Component, signal } from '@angular/core';
+import { Component } from '@angular/core';
 import { RouterOutlet } from '@angular/router';
 import { Navigation } from '@app/components/navigation/navigation';
 
@@ -7,6 +7,4 @@ import { Navigation } from '@app/components/navigation/navigation';
   imports: [RouterOutlet, Navigation],
   templateUrl: './app.html',
 })
-export class App {
-  protected readonly title = signal('ui-kit');
-}
+export class App {}
