@@ -1,12 +1,12 @@
 <div v-theme="neumorphic-blue"
      v-style="neumorphic-style"
      class="p-8">
-  <h1 class="text-3xl font-bold mb-6">v-progress</h1>
+  <h1 class="mb-6 text-3xl font-bold">v-progress</h1>
 
-  <div class="flex flex-col gap-8 lg:flex-row">
+  <div class="lg:flex-row flex flex-col gap-8">
     <div class="flex-1">
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Basic Progress Bars</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Basic Progress Bars</h2>
         <div class="flex flex-col gap-4">
           <v-progress />
           <v-progress [config]="{ value: 33 }" />
@@ -16,25 +16,25 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Progress Bar Styles</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Progress Bar Styles</h2>
         <div class="flex flex-col gap-4">
           <div>
-            <p class="text-sm mb-2">Flat (default)</p>
+            <p class="mb-2 text-sm">Flat (default)</p>
             <v-progress [config]="{ value: 50 }" />
           </div>
           <div>
-            <p class="text-sm mb-2">Inset</p>
+            <p class="mb-2 text-sm">Inset</p>
             <v-progress [config]="{ barGap: 1, value: 50, barStyle: ProgressBarStyle.Inset }" />
           </div>
           <div>
-            <p class="text-sm mb-2">Raised</p>
+            <p class="mb-2 text-sm">Raised</p>
             <v-progress [config]="{ barGap: 1, value: 50, barStyle: ProgressBarStyle.Raised }" />
           </div>
         </div>
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">With Values Display</h2>
+        <h2 class="mb-6 text-2xl font-semibold">With Values Display</h2>
         <div class="flex flex-col gap-4">
           <v-progress [config]="{ barGap: 1, value: 50, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />
           <v-progress [config]="{ barGap: 1, value: 75, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />
@@ -43,20 +43,20 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Custom Min/Max Ranges</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Custom Min/Max Ranges</h2>
         <div class="flex flex-col gap-4">
           <div>
-            <p class="text-sm mb-2">Range 10-150, value 130</p>
+            <p class="mb-2 text-sm">Range 10-150, value 130</p>
             <v-progress
                         [config]="{ barGap: 1, min: 10, max: 150, value: 130, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />
           </div>
           <div>
-            <p class="text-sm mb-2">Range 10-150, value 140</p>
+            <p class="mb-2 text-sm">Range 10-150, value 140</p>
             <v-progress
                         [config]="{ barGap: 1, min: 10, max: 150, value: 140, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />
           </div>
           <div>
-            <p class="text-sm mb-2">Range 10-150, value 149</p>
+            <p class="mb-2 text-sm">Range 10-150, value 149</p>
             <v-progress
                         [config]="{ barGap: 1, min: 10, max: 150, value: 149, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />
           </div>
@@ -64,15 +64,15 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Edge Cases</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Edge Cases</h2>
         <div class="flex flex-col gap-4">
           <div>
-            <p class="text-sm mb-2">Negative value (-25)</p>
+            <p class="mb-2 text-sm">Negative value (-25)</p>
             <v-progress
                         [config]="{ barGap: 1, min: 0, max: 100, value: -25, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />
           </div>
           <div>
-            <p class="text-sm mb-2">Value exceeds max (200 of 50-150)</p>
+            <p class="mb-2 text-sm">Value exceeds max (200 of 50-150)</p>
             <v-progress
                         [config]="{ barGap: 1, min: 50, max: 150, value: 200, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />
           </div>
@@ -80,7 +80,7 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Custom Colors</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Custom Colors</h2>
         <div class="flex flex-col gap-4">
           <v-progress
                       [config]="{ barGap: 1, barColor: 'green', value: 80, barStyle: ProgressBarStyle.Raised, isShowValues: true }" />

@@ -7,6 +7,7 @@ import { VIconPage } from './components/ui-showcase/pages/v-icon/v-icon';
 import { VInputPage } from './components/ui-showcase/pages/v-input/v-input';
 import { VModalPage } from './components/ui-showcase/pages/v-modal/v-modal';
 import { VProgressPage } from './components/ui-showcase/pages/v-progress/v-progress';
+import { VSliderPage } from './components/ui-showcase/pages/v-slider/v-slider';
 
 export const routes: Routes = [
   { path: 'v-button', component: VButtonPage },
@@ -17,6 +18,7 @@ export const routes: Routes = [
   { path: 'v-icon', component: VIconPage },
   { path: 'v-modal', component: VModalPage },
   { path: 'v-progress', component: VProgressPage },
+  { path: 'v-slider', component: VSliderPage },
   { path: '', redirectTo: 'v-button', pathMatch: 'full' },
   { path: '**', redirectTo: 'v-button', pathMatch: 'full' },
 ];

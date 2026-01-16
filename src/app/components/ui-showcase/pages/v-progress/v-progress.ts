@@ -1,5 +1,6 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { ProgressBarStyle, VProgress } from '@ui-kit/components/v-progress/v-progress';
+import { ProgressBarStyle } from '@ui-kit/components/types';
+import { VProgress } from '@ui-kit/components/v-progress/v-progress';
 
 @Component({
   selector: 'v-progress-page',

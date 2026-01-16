@@ -17,6 +17,7 @@ export class NavigationService {
     'v-icon',
     'v-modal',
     'v-progress',
+    'v-slider',
   ];
 
   public readonly currentRoute$ = this.routerService.currentRoute$;

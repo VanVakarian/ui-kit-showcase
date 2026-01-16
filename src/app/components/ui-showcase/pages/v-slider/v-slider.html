@@ -1,0 +1,101 @@
+<div v-theme="neumorphic-blue"
+     v-style="neumorphic-style"
+     class="p-8">
+  <h1 class="mb-6 text-3xl font-bold">v-slider</h1>
+
+  <div class="lg:flex-row flex flex-col gap-10">
+    <div class="flex-1">
+      <section class="mb-12">
+        <h2 class="mb-6 text-2xl font-semibold">Single Value</h2>
+        <div class="flex flex-col gap-4">
+          <v-slider [config]="{
+                      min: 0,
+                      max: 100,
+                      barStyle: ProgressBarStyle.Flat,
+                    }"
+                    [value]="singleValue$$()"
+                    (valueChange)="singleValue$$.set($event)" />
+          <div class="text-sm">Value: {{ singleValue$$() }}</div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-6 text-2xl font-semibold">Single Value with raised bar</h2>
+        <div class="flex flex-col gap-4">
+          <v-slider [config]="{
+                      min: 0,
+                      max: 100,
+                      barStyle: ProgressBarStyle.Raised,
+                    }"
+                    [value]="singleValue$$()"
+                    (valueChange)="singleValue$$.set($event)" />
+          <div class="text-sm">Value: {{ singleValue$$() }}</div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-6 text-2xl font-semibold">Range</h2>
+        <div class="flex flex-col gap-4">
+          <v-slider [config]="{
+                      min: 0,
+                      max: 100,
+                      isRange: true,
+                      barStyle: ProgressBarStyle.Inset,
+                    }"
+                    [range]="rangeValue$$()"
+                    (rangeChange)="rangeValue$$.set($event)" />
+          <div class="text-sm">Range: {{ rangeValue$$()[0] }} – {{ rangeValue$$()[1] }}</div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-6 text-2xl font-semibold">Range with squarish thumbs</h2>
+        <div class="flex flex-col gap-4">
+          <v-slider [config]="{
+                      min: 0,
+                      max: 100,
+                      isRange: true,
+                      barStyle: ProgressBarStyle.Inset,
+                      thumbBorderRadius: 2,
+                    }"
+                    [range]="rangeValue$$()"
+                    (rangeChange)="rangeValue$$.set($event)" />
+          <div class="text-sm">Range: {{ rangeValue$$()[0] }} – {{ rangeValue$$()[1] }}</div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-6 text-2xl font-semibold">Range With Negative Values</h2>
+        <div class="flex flex-col gap-4">
+          <v-slider [config]="{
+                      min: -100,
+                      max: 100,
+                      isRange: true,
+                      barStyle: ProgressBarStyle.Raised,
+                      thumbBorderRadius: 2,
+                    }"
+                    [range]="rangeNegativeValue$$()"
+                    (rangeChange)="rangeNegativeValue$$.set($event)" />
+          <div class="text-sm">Range: {{ rangeNegativeValue$$()[0] }} – {{ rangeNegativeValue$$()[1] }}</div>
+        </div>
+      </section>
+
+      <section class="mb-12">
+        <h2 class="mb-6 text-2xl font-semibold">Custom Size</h2>
+        <div class="flex flex-col gap-4">
+          <v-slider [config]="{
+                      min: 0,
+                      max: 100,
+                      height: 4,
+                      thumbSize: 8,
+                      barStyle: ProgressBarStyle.Raised,
+                    }"
+                    [value]="singleValue$$()"
+                    (valueChange)="singleValue$$.set($event)" />
+        </div>
+      </section>
+    </div>
+
+    <div class="flex-1"></div>
+  </div>
+</div>
