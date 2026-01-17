@@ -1,0 +1,95 @@
+<div v-theme="neumorphic-blue"
+     v-style="neumorphic-style"
+     class="p-8">
+  <h1 class="mb-6 text-3xl font-bold">v-checkbox</h1>
+
+  <div class="flex flex-col gap-10">
+    <section>
+      <h2 class="mb-6 text-2xl font-semibold">Checkbox</h2>
+      <div class="flex flex-col gap-4">
+        <v-checkbox [config]="{
+                      label: basicChecked$$() ? 'Checked' : 'Unchecked',
+                    }"
+                    [value]="basicChecked$$()"
+                    (valueChange)="basicChecked$$.set($event)" />
+
+        <v-checkbox [config]="{
+                      label: basicUnchecked$$() ? 'Checked' : 'Unchecked',
+                    }"
+                    [value]="basicUnchecked$$()"
+                    (valueChange)="basicUnchecked$$.set($event)" />
+
+        <v-checkbox [config]="{
+                      label: 'Disabled checked',
+                      isDisabled: true,
+                    }"
+                    [value]="true" />
+
+        <v-checkbox [config]="{
+                      label: 'Disabled unchecked',
+                      isDisabled: true,
+                    }"
+                    [value]="false" />
+      </div>
+    </section>
+
+    <section>
+      <h2 class="mb-6 text-2xl font-semibold">Switch</h2>
+
+      <div class="flex flex-col gap-4">
+        <v-checkbox [config]="{
+                      mode: 'switch',
+                      label: switchOn$$() ? 'Enabled' : 'Disabled',
+                    }"
+                    [value]="switchOn$$()"
+                    (valueChange)="switchOn$$.set($event)" />
+
+        <v-checkbox [config]="{
+                      mode: 'switch',
+                      label: 'Disabled',
+                      isDisabled: true,
+                    }"
+                    [value]="true" />
+
+        <v-checkbox [config]="{
+                      mode: 'switch',
+                      label: switchOff$$() ? 'Enabled' : 'Disabled',
+                    }"
+                    [value]="switchOff$$()"
+                    (valueChange)="switchOff$$.set($event)" />
+      </div>
+    </section>
+
+    <section>
+      <h2 class="mb-6 text-2xl font-semibold">Sizes</h2>
+
+      <div class="flex flex-col gap-4">
+        <v-checkbox [config]="{
+                      label: basicChecked$$() ? 'Compact on' : 'Compact off',
+                      size: 5,
+                      checkIconSize: 3,
+                    }"
+                    [value]="basicChecked$$()"
+                    (valueChange)="basicChecked$$.set($event)" />
+
+        <v-checkbox [config]="{
+                      label: basicUnchecked$$() ? 'Large on' : 'Large off',
+                      size: 8,
+                      checkIconSize: 5,
+                    }"
+                    [value]="basicUnchecked$$()"
+                    (valueChange)="basicUnchecked$$.set($event)" />
+
+        <v-checkbox [config]="{
+                      mode: 'switch',
+                      label: switchOn$$() ? 'Wide switch on' : 'Wide switch off',
+                      switchWidth: 16,
+                      switchHeight: 8,
+                      thumbSize: 6,
+                    }"
+                    [value]="switchOn$$()"
+                    (valueChange)="switchOn$$.set($event)" />
+      </div>
+    </section>
+  </div>
+</div>

@@ -21,13 +21,32 @@
         <h3 class="mb-6 text-xl font-semibold">Disabled States</h3>
         <div class="flex flex-wrap gap-4">
           <v-button flat
-                    [config]="{ isDisabled: true }">flat</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            flat
+          </v-button>
+
           <v-button raised
-                    [config]="{ isDisabled: true }">raised</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            raised
+          </v-button>
+
           <v-button primary
-                    [config]="{ isDisabled: true }">primary</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            primary
+          </v-button>
+
           <v-button danger
-                    [config]="{ isDisabled: true }">danger</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            danger
+          </v-button>
         </div>
       </section>
 
@@ -35,22 +54,37 @@
         <h3 class="mb-6 text-xl font-semibold">Icon Buttons (Hidden Label)</h3>
         <div class="flex flex-wrap gap-4">
           <v-button primary
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Mic" />
           </v-button>
+
           <v-button danger
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Close" />
           </v-button>
+
           <v-button raised
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Add" />
           </v-button>
+
           <v-button flat
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Settings" />
           </v-button>
@@ -65,11 +99,13 @@
                     [name]="Icon.Add" />
             Add Item
           </v-button>
+
           <v-button danger>
             <v-icon v-prefix
                     [name]="Icon.Delete" />
             Delete
           </v-button>
+
           <v-button raised>
             <v-icon v-prefix
                     [name]="Icon.Edit" />
@@ -82,16 +118,27 @@
         <h3 class="mb-6 text-xl font-semibold">Custom Configuration</h3>
         <div class="flex flex-wrap gap-4">
           <v-button flat
-                    [config]="{ isWithoutShadow: true, bgOpacity: '0.5', padding: 0 }">
+                    [config]="{
+                      isWithoutShadow: true,
+                      bgOpacity: '0.5',
+                      padding: 0,
+                    }">
             <v-icon [name]="Icon.Close"
                     [size]="8" />
           </v-button>
+
           <v-button primary
-                    [config]="{ borderRadius: 7, padding: 3 }">
+                    [config]="{
+                      borderRadius: 7,
+                      padding: 3,
+                    }">
             Rounded Button
           </v-button>
+
           <v-button raised
-                    [config]="{ width: '200px' }">
+                    [config]="{
+                      width: '200px',
+                    }">
             Full Width
           </v-button>
         </div>
@@ -116,13 +163,32 @@
         <h3 class="mb-6 text-xl font-semibold">Disabled States</h3>
         <div class="flex flex-wrap gap-4">
           <v-button flat
-                    [config]="{ isDisabled: true }">flat</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            flat
+          </v-button>
+
           <v-button raised
-                    [config]="{ isDisabled: true }">raised</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            raised
+          </v-button>
+
           <v-button primary
-                    [config]="{ isDisabled: true }">primary</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            primary
+          </v-button>
+
           <v-button danger
-                    [config]="{ isDisabled: true }">danger</v-button>
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            danger
+          </v-button>
         </div>
       </section>
 
@@ -130,22 +196,37 @@
         <h3 class="mb-6 text-xl font-semibold">Icon Buttons (Hidden Label)</h3>
         <div class="flex flex-wrap gap-4">
           <v-button primary
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Mic" />
           </v-button>
+
           <v-button danger
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Close" />
           </v-button>
+
           <v-button raised
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Add" />
           </v-button>
+
           <v-button flat
-                    [config]="{ isLabelHidden: true, padding: 2 }">
+                    [config]="{
+                      isLabelHidden: true,
+                      padding: 2,
+                    }">
             <v-icon v-prefix
                     [name]="Icon.Settings" />
           </v-button>
@@ -160,11 +241,13 @@
                     [name]="Icon.Add" />
             Add Item
           </v-button>
+
           <v-button danger>
             <v-icon v-prefix
                     [name]="Icon.Delete" />
             Delete
           </v-button>
+
           <v-button raised>
             <v-icon v-prefix
                     [name]="Icon.Edit" />
@@ -177,16 +260,27 @@
         <h3 class="mb-6 text-xl font-semibold">Custom Configuration</h3>
         <div class="flex flex-wrap gap-4">
           <v-button flat
-                    [config]="{ isWithoutShadow: true, bgOpacity: '0.5', padding: 0 }">
+                    [config]="{
+                      isWithoutShadow: true,
+                      bgOpacity: '0.5',
+                      padding: 0,
+                    }">
             <v-icon [name]="Icon.Close"
                     [size]="8" />
           </v-button>
+
           <v-button primary
-                    [config]="{ borderRadius: 7, padding: 3 }">
+                    [config]="{
+                      borderRadius: 7,
+                      padding: 3,
+                    }">
             Rounded Button
           </v-button>
+
           <v-button raised
-                    [config]="{ width: '200px' }">
+                    [config]="{
+                      width: '200px',
+                    }">
             Full Width
           </v-button>
         </div>

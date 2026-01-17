@@ -1,6 +1,7 @@
 import { Routes } from '@angular/router';
 import { VButtonPage } from './components/ui-showcase/pages/v-button/v-button';
 import { VCardPage } from './components/ui-showcase/pages/v-card/v-card';
+import { VCheckboxPage } from './components/ui-showcase/pages/v-checkbox/v-checkbox';
 import { VDropdownPage } from './components/ui-showcase/pages/v-dropdown/v-dropdown';
 import { VExpandPage } from './components/ui-showcase/pages/v-expand/v-expand';
 import { VIconPage } from './components/ui-showcase/pages/v-icon/v-icon';
@@ -11,6 +12,7 @@ import { VSliderPage } from './components/ui-showcase/pages/v-slider/v-slider';
 
 export const routes: Routes = [
   { path: 'v-button', component: VButtonPage },
+  { path: 'v-checkbox', component: VCheckboxPage },
   { path: 'v-input', component: VInputPage },
   { path: 'v-card', component: VCardPage },
   { path: 'v-dropdown', component: VDropdownPage },

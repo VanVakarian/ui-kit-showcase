@@ -1,21 +1,23 @@
 <div v-theme="neumorphic-blue"
      v-style="neumorphic-style"
      class="p-8">
-  <h1 class="text-3xl font-bold mb-6">v-modal</h1>
+  <h1 class="mb-6 text-3xl font-bold">v-modal</h1>
 
-  <div class="flex flex-col gap-8 lg:flex-row">
+  <div class="lg:flex-row flex flex-col gap-8">
     <div class="flex-1">
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Basic Modal</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Basic Modal</h2>
         <v-button raised
                   (click)="openModal('basic')">
           Open Basic Modal
         </v-button>
 
         @if (isModalOpen === 'basic') {
-          <v-modal [config]="{ isOpen: true }"
+          <v-modal [config]="{
+                     isOpen: true,
+                   }"
                    (onClose)="closeModal()">
-            <h2 class="text-xl font-semibold mb-4">Modal Title</h2>
+            <h2 class="mb-4 text-xl font-semibold">Modal Title</h2>
             <p class="mb-4">This is a basic modal with simple content.</p>
             <v-button danger
                       (onClick)="closeModal()">Close</v-button>
@@ -24,14 +26,18 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Modal with Header and Footer</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Modal with Header and Footer</h2>
         <v-button raised
                   (click)="openModal('headerFooter')">
           Open Modal with Sections
         </v-button>
 
         @if (isModalOpen === 'headerFooter') {
-          <v-modal [config]="{ isOpen: true, width: '500px', borderRadius: 3 }"
+          <v-modal [config]="{
+                     isOpen: true,
+                     width: '500px',
+                     borderRadius: 3,
+                   }"
                    (onClose)="closeModal()">
             <div v-header>
               <h3 class="m-0">Modal Header</h3>
@@ -54,14 +60,18 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Modal with Long Content</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Modal with Long Content</h2>
         <v-button raised
                   (click)="openModal('longContent')">
           Open Modal with Scrollable Content
         </v-button>
 
         @if (isModalOpen === 'longContent') {
-          <v-modal [config]="{ isOpen: true, width: '500px', borderRadius: 3 }"
+          <v-modal [config]="{
+                     isOpen: true,
+                     width: '500px',
+                     borderRadius: 3,
+                   }"
                    (onClose)="closeModal()">
             <div v-header>
               <h3 class="m-0">Long Content Modal</h3>
@@ -92,14 +102,18 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Modal with Dropdown</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Modal with Dropdown</h2>
         <v-button raised
                   (click)="openModal('dropdown')">
           Open Modal with Dropdown
         </v-button>
 
         @if (isModalOpen === 'dropdown') {
-          <v-modal [config]="{ isOpen: true, width: '500px', borderRadius: 3 }"
+          <v-modal [config]="{
+                     isOpen: true,
+                     width: '500px',
+                     borderRadius: 3,
+                   }"
                    (onClose)="closeModal()">
             <div v-header>
               <h3 class="m-0">Select Item</h3>
@@ -131,8 +145,8 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Custom Width and Border Radius</h2>
-        <div class="flex gap-4 flex-wrap">
+        <h2 class="mb-6 text-2xl font-semibold">Custom Width and Border Radius</h2>
+        <div class="flex flex-wrap gap-4">
           <v-button raised
                     (click)="openModal('small')">
             Small Modal (300px)
@@ -144,7 +158,11 @@
         </div>
 
         @if (isModalOpen === 'small') {
-          <v-modal [config]="{ isOpen: true, width: '300px', borderRadius: 1 }"
+          <v-modal [config]="{
+                     isOpen: true,
+                     width: '300px',
+                     borderRadius: 1,
+                   }"
                    (onClose)="closeModal()">
             <p class="p-4">Small modal with custom width</p>
             <v-button danger
@@ -154,7 +172,11 @@
         }
 
         @if (isModalOpen === 'large') {
-          <v-modal [config]="{ isOpen: true, width: '800px', borderRadius: 5 }"
+          <v-modal [config]="{
+                     isOpen: true,
+                     width: '800px',
+                     borderRadius: 5,
+                   }"
                    (onClose)="closeModal()">
             <p class="p-4">Large modal with custom width and larger border radius</p>
             <v-button danger

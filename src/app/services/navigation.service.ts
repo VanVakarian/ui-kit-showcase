@@ -10,6 +10,7 @@ export class NavigationService {
 
   public readonly uiShowcaseButtons: string[] = [
     'v-button',
+    'v-checkbox',
     'v-input',
     'v-card',
     'v-dropdown',

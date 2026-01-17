@@ -1,12 +1,12 @@
 <div v-theme="neumorphic-blue"
      v-style="neumorphic-style"
      class="p-8">
-  <h1 class="text-3xl font-bold mb-6">v-dropdown</h1>
+  <h1 class="mb-6 text-3xl font-bold">v-dropdown</h1>
 
-  <div class="flex flex-col gap-8 lg:flex-row">
+  <div class="lg:flex-row flex flex-col gap-8">
     <div class="flex-1">
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Basic Dropdown</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Basic Dropdown</h2>
         <v-dropdown label="Select Food Item"
                     placeholder="Search food items"
                     class="w-full max-w-md"
@@ -15,7 +15,7 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Dropdown with Custom Width</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Dropdown with Custom Width</h2>
         <v-dropdown label="Select Food Item"
                     placeholder="Search food items"
                     class="w-full max-w-md"
@@ -25,8 +25,8 @@
       </section>
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Dropdown with Expand Direction</h2>
-        <div class="flex gap-4 flex-wrap">
+        <h2 class="mb-6 text-2xl font-semibold">Dropdown with Expand Direction</h2>
+        <div class="flex flex-wrap gap-4">
           <v-dropdown label="Expand Left"
                       placeholder="Search"
                       class="w-64"
@@ -46,7 +46,7 @@
 
       @if (selectedFoodItem) {
         <section class="mb-12">
-          <h2 class="text-2xl font-semibold mb-6">Selected Item</h2>
+          <h2 class="mb-6 text-2xl font-semibold">Selected Item</h2>
           <v-card>
             <p><strong>Selected:</strong> {{ selectedFoodItem }}</p>
           </v-card>
@@ -54,15 +54,20 @@
       }
 
       <section class="mb-12">
-        <h2 class="text-2xl font-semibold mb-6">Dropdown in Modal</h2>
+        <h2 class="mb-6 text-2xl font-semibold">Dropdown in Modal</h2>
         <v-button raised
                   (click)="openModal()">
           Open Modal with Dropdown
         </v-button>
 
         @if (isModalOpen) {
-          <v-modal [config]="{ isOpen: isModalOpen, width: '500px', borderRadius: 3 }"
+          <v-modal [config]="{
+                     isOpen: isModalOpen,
+                     width: '500px',
+                     borderRadius: 3,
+                   }"
                    (onClose)="closeModal()">
+
             <div v-header>
               <h3 class="m-0">Select from Dropdown</h3>
             </div>
@@ -82,6 +87,7 @@
                 Close
               </v-button>
             </div>
+
           </v-modal>
         }
       </section>
