@@ -7,29 +7,25 @@
     <section>
       <h2 class="mb-6 text-2xl font-semibold">Checkbox</h2>
       <div class="flex flex-col gap-4">
-        <v-checkbox [config]="{
-                      label: basicChecked$$() ? 'Checked' : 'Unchecked',
-                    }"
-                    [value]="basicChecked$$()"
-                    (valueChange)="basicChecked$$.set($event)" />
+        <v-checkbox [value]="basicChecked$$()"
+                    (valueChange)="basicChecked$$.set($event)">
+          {{ basicChecked$$() ? 'Checked' : 'Unchecked' }}
+        </v-checkbox>
 
-        <v-checkbox [config]="{
-                      label: basicUnchecked$$() ? 'Checked' : 'Unchecked',
-                    }"
-                    [value]="basicUnchecked$$()"
-                    (valueChange)="basicUnchecked$$.set($event)" />
+        <v-checkbox [value]="basicUnchecked$$()"
+                    (valueChange)="basicUnchecked$$.set($event)">
+          {{ basicUnchecked$$() ? 'Checked' : 'Unchecked' }}
+        </v-checkbox>
 
-        <v-checkbox [config]="{
-                      label: 'Disabled checked',
-                      isDisabled: true,
-                    }"
-                    [value]="true" />
+        <v-checkbox [config]="{ isDisabled: true }"
+                    [value]="true">
+          Disabled checked
+        </v-checkbox>
 
-        <v-checkbox [config]="{
-                      label: 'Disabled unchecked',
-                      isDisabled: true,
-                    }"
-                    [value]="false" />
+        <v-checkbox [config]="{ isDisabled: true }"
+                    [value]="false">
+          Disabled unchecked
+        </v-checkbox>
       </div>
     </section>
 
@@ -37,26 +33,22 @@
       <h2 class="mb-6 text-2xl font-semibold">Switch</h2>
 
       <div class="flex flex-col gap-4">
-        <v-checkbox [config]="{
-                      mode: 'switch',
-                      label: switchOn$$() ? 'Enabled' : 'Disabled',
-                    }"
+        <v-checkbox [config]="{ mode: 'switch' }"
                     [value]="switchOn$$()"
-                    (valueChange)="switchOn$$.set($event)" />
+                    (valueChange)="switchOn$$.set($event)">
+          {{ switchOn$$() ? 'Enabled' : 'Disabled' }}
+        </v-checkbox>
 
-        <v-checkbox [config]="{
-                      mode: 'switch',
-                      label: 'Disabled',
-                      isDisabled: true,
-                    }"
-                    [value]="true" />
+        <v-checkbox [config]="{ mode: 'switch', isDisabled: true }"
+                    [value]="true">
+          Disabled
+        </v-checkbox>
 
-        <v-checkbox [config]="{
-                      mode: 'switch',
-                      label: switchOff$$() ? 'Enabled' : 'Disabled',
-                    }"
+        <v-checkbox [config]="{ mode: 'switch' }"
                     [value]="switchOff$$()"
-                    (valueChange)="switchOff$$.set($event)" />
+                    (valueChange)="switchOff$$.set($event)">
+          {{ switchOff$$() ? 'Enabled' : 'Disabled' }}
+        </v-checkbox>
       </div>
     </section>
 
@@ -65,30 +57,51 @@
 
       <div class="flex flex-col gap-4">
         <v-checkbox [config]="{
-                      label: basicChecked$$() ? 'Compact on' : 'Compact off',
                       size: 5,
                       checkIconSize: 3,
                     }"
                     [value]="basicChecked$$()"
-                    (valueChange)="basicChecked$$.set($event)" />
+                    (valueChange)="basicChecked$$.set($event)">
+          {{ basicChecked$$() ? 'Compact on' : 'Compact off' }}
+        </v-checkbox>
 
         <v-checkbox [config]="{
-                      label: basicUnchecked$$() ? 'Large on' : 'Large off',
                       size: 8,
                       checkIconSize: 5,
                     }"
                     [value]="basicUnchecked$$()"
-                    (valueChange)="basicUnchecked$$.set($event)" />
+                    (valueChange)="basicUnchecked$$.set($event)">
+          {{ basicUnchecked$$() ? 'Large on' : 'Large off' }}
+        </v-checkbox>
 
         <v-checkbox [config]="{
                       mode: 'switch',
-                      label: switchOn$$() ? 'Wide switch on' : 'Wide switch off',
                       switchWidth: 16,
                       switchHeight: 8,
                       thumbSize: 6,
                     }"
                     [value]="switchOn$$()"
-                    (valueChange)="switchOn$$.set($event)" />
+                    (valueChange)="switchOn$$.set($event)">
+          {{ switchOn$$() ? 'Wide switch on' : 'Wide switch off' }}
+        </v-checkbox>
+      </div>
+    </section>
+
+    <section>
+      <h2 class="mb-6 text-2xl font-semibold">Label Position</h2>
+
+      <div class="flex flex-col gap-4">
+        <v-checkbox [config]="{ labelPosition: 'right' }"
+                    [value]="basicChecked$$()"
+                    (valueChange)="basicChecked$$.set($event)">
+          Label on the right
+        </v-checkbox>
+
+        <v-checkbox [config]="{ labelPosition: 'left' }"
+                    [value]="basicUnchecked$$()"
+                    (valueChange)="basicUnchecked$$.set($event)">
+          Label on the left
+        </v-checkbox>
       </div>
     </section>
   </div>
