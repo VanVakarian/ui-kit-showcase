@@ -10,192 +10,327 @@
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Button Styles</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button flat>flat</v-button>
-          <v-button raised>raised</v-button>
-          <v-button primary>primary</v-button>
-          <v-button danger>danger</v-button>
+          <v-button-old flat>flat</v-button-old>
+          <v-button-old raised>raised</v-button-old>
+          <v-button-old primary>primary</v-button-old>
+          <v-button-old danger>danger</v-button-old>
         </div>
       </section>
 
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Disabled States</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button flat
-                    [config]="{
-                      isDisabled: true,
-                    }">
+          <v-button-old flat
+                        [config]="{
+                          isDisabled: true,
+                        }">
             flat
-          </v-button>
+          </v-button-old>
 
-          <v-button raised
-                    [config]="{
-                      isDisabled: true,
-                    }">
+          <v-button-old raised
+                        [config]="{
+                          isDisabled: true,
+                        }">
             raised
-          </v-button>
+          </v-button-old>
 
-          <v-button primary
-                    [config]="{
-                      isDisabled: true,
-                    }">
+          <v-button-old primary
+                        [config]="{
+                          isDisabled: true,
+                        }">
             primary
-          </v-button>
+          </v-button-old>
 
-          <v-button danger
-                    [config]="{
-                      isDisabled: true,
-                    }">
+          <v-button-old danger
+                        [config]="{
+                          isDisabled: true,
+                        }">
             danger
-          </v-button>
+          </v-button-old>
         </div>
       </section>
 
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Icon Buttons (Hidden Label)</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button primary
-                    [config]="{
-                      isLabelHidden: true,
-                      padding: 2,
-                    }">
+          <v-button-old primary
+                        [config]="{
+                          isLabelHidden: true,
+                          padding: 2,
+                        }">
             <v-icon v-prefix
                     [name]="Icon.Mic" />
-          </v-button>
+          </v-button-old>
 
-          <v-button danger
-                    [config]="{
-                      isLabelHidden: true,
-                      padding: 2,
-                    }">
+          <v-button-old danger
+                        [config]="{
+                          isLabelHidden: true,
+                          padding: 2,
+                        }">
             <v-icon v-prefix
                     [name]="Icon.Close" />
-          </v-button>
+          </v-button-old>
 
-          <v-button raised
-                    [config]="{
-                      isLabelHidden: true,
-                      padding: 2,
-                    }">
+          <v-button-old raised
+                        [config]="{
+                          isLabelHidden: true,
+                          padding: 2,
+                        }">
             <v-icon v-prefix
                     [name]="Icon.Add" />
-          </v-button>
+          </v-button-old>
 
-          <v-button flat
-                    [config]="{
-                      isLabelHidden: true,
-                      padding: 2,
-                    }">
+          <v-button-old flat
+                        [config]="{
+                          isLabelHidden: true,
+                          padding: 2,
+                        }">
             <v-icon v-prefix
                     [name]="Icon.Settings" />
-          </v-button>
+          </v-button-old>
         </div>
       </section>
 
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Buttons with Icons and Text</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button primary>
+          <v-button-old primary>
             <v-icon v-prefix
                     [name]="Icon.Add" />
             Add Item
-          </v-button>
+          </v-button-old>
 
-          <v-button danger>
+          <v-button-old danger>
             <v-icon v-prefix
                     [name]="Icon.Delete" />
             Delete
-          </v-button>
+          </v-button-old>
 
-          <v-button raised>
+          <v-button-old raised>
             <v-icon v-prefix
                     [name]="Icon.Edit" />
             Edit
-          </v-button>
+          </v-button-old>
         </div>
       </section>
 
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Custom Configuration</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button flat
-                    [config]="{
-                      isWithoutShadow: true,
-                      bgOpacity: '0.5',
-                      padding: 0,
-                    }">
+          <v-button-old flat
+                        [config]="{
+                          isWithoutShadow: true,
+                          bgOpacity: '0.5',
+                          padding: 0,
+                        }">
             <v-icon [name]="Icon.Close"
                     [size]="8" />
-          </v-button>
+          </v-button-old>
 
-          <v-button primary
-                    [config]="{
-                      borderRadius: 7,
-                      padding: 3,
-                    }">
+          <v-button-old primary
+                        [config]="{
+                          borderRadius: 7,
+                          padding: 3,
+                        }">
             Rounded Button
-          </v-button>
+          </v-button-old>
 
-          <v-button raised
-                    [config]="{
-                      width: '200px',
-                    }">
+          <v-button-old raised
+                        [config]="{
+                          width: '200px',
+                        }">
             Full Width
-          </v-button>
+          </v-button-old>
         </div>
       </section>
     </div>
 
-    <div v-style="flat"
-         class="flex-1">
-      <h2 class="mb-6 text-2xl font-semibold">Flat Design</h2>
+    <div v-style="flat-style"
+         v-theme="flat-blue"
+         class="flex flex-col gap-6">
+      <h2 class="mb-0 text-2xl font-semibold">Flat Design</h2>
 
-      <section class="mb-12">
-        <h3 class="mb-6 text-xl font-semibold">Button Styles</h3>
-        <div class="flex flex-wrap gap-4">
-          <v-button flat>flat</v-button>
-          <v-button raised>raised</v-button>
-          <v-button primary>primary</v-button>
-          <v-button danger>danger</v-button>
+      <section class="my-0">
+        <h3 class="my-0 text-xl font-semibold">Style + Role</h3>
+        <div class="grid gap-3"
+             style="grid-template-columns: max-content repeat(5, max-content); align-items: center; justify-items: center;">
+          <div></div>
+          <div class="text-slate-500 text-sm font-semibold">-</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-primary</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-accent</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-danger</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-primary .v-hover</div>
+
+          <div class="text-slate-600 text-sm font-semibold">.v-link</div>
+          <v-button class="v-link">Button</v-button>
+          <v-button class="v-link v-primary">Button</v-button>
+          <v-button class="v-link v-accent">Button</v-button>
+          <v-button class="v-link v-danger">Button</v-button>
+          <v-button class="v-link v-primary v-hover">Button</v-button>
+
+          <div class="text-slate-600 text-sm font-semibold">.v-flat</div>
+          <v-button class="v-flat">Button</v-button>
+          <v-button class="v-flat v-primary">Button</v-button>
+          <v-button class="v-flat v-accent">Button</v-button>
+          <v-button class="v-flat v-danger">Button</v-button>
+          <v-button class="v-flat v-primary v-hover">Button</v-button>
+
+          <div class="text-slate-600 text-sm font-semibold">.v-raised</div>
+          <v-button class="v-raised">Button</v-button>
+          <v-button class="v-raised v-primary">Button</v-button>
+          <v-button class="v-raised v-accent">Button</v-button>
+          <v-button class="v-raised v-danger">Button</v-button>
+          <v-button class="v-raised v-primary v-hover">Button</v-button>
+        </div>
+      </section>
+
+      <section class="dark py-3">
+        <h3 class="mb-6 text-xl font-semibold">Style + Role</h3>
+        <div class="grid gap-3"
+             style="grid-template-columns: max-content repeat(5, max-content); align-items: center; justify-items: center;">
+          <div></div>
+          <div class="text-slate-500 text-sm font-semibold">-</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-primary</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-accent</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-danger</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-primary .v-hover</div>
+
+          <div class="text-slate-600 text-sm font-semibold">.v-link</div>
+          <v-button class="v-link">Button</v-button>
+          <v-button class="v-link v-primary">Button</v-button>
+          <v-button class="v-link v-accent">Button</v-button>
+          <v-button class="v-link v-danger">Button</v-button>
+          <v-button class="v-link v-primary v-hover">Button</v-button>
+
+          <div class="text-slate-600 text-sm font-semibold">.v-flat</div>
+          <v-button class="v-flat">Button</v-button>
+          <v-button class="v-flat v-primary">Button</v-button>
+          <v-button class="v-flat v-accent">Button</v-button>
+          <v-button class="v-flat v-danger">Button</v-button>
+          <v-button class="v-flat v-primary v-hover">Button</v-button>
+
+          <div class="text-slate-600 text-sm font-semibold">.v-raised</div>
+          <v-button class="v-raised">Button</v-button>
+          <v-button class="v-raised v-primary">Button</v-button>
+          <v-button class="v-raised v-accent">Button</v-button>
+          <v-button class="v-raised v-danger">Button</v-button>
+          <v-button class="v-raised v-primary v-hover">Button</v-button>
         </div>
       </section>
 
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Disabled States</h3>
-        <div class="flex flex-wrap gap-4">
-          <v-button flat
+        <div class="grid gap-3"
+             style="grid-template-columns: max-content repeat(5, max-content); align-items: center; justify-items: center;">
+          <div></div>
+          <div class="text-slate-500 text-sm font-semibold">-</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-primary</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-accent</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-danger</div>
+          <div class="text-slate-500 text-sm font-semibold">.v-primary .v-hover</div>
+
+          <div class="text-slate-600 text-sm font-semibold">.v-link</div>
+          <v-button class="v-link"
                     [config]="{
                       isDisabled: true,
                     }">
-            flat
+            Button
+          </v-button>
+          <v-button class="v-link v-primary"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-link v-accent"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-link v-danger"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-link v-primary v-hover"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
           </v-button>
 
-          <v-button raised
+          <div class="text-slate-600 text-sm font-semibold">.v-flat</div>
+          <v-button class="v-flat"
                     [config]="{
                       isDisabled: true,
                     }">
-            raised
+            Button
+          </v-button>
+          <v-button class="v-flat v-primary"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-flat v-accent"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-flat v-danger"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-flat v-primary v-hover"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
           </v-button>
 
-          <v-button primary
+          <div class="text-slate-600 text-sm font-semibold">.v-raised</div>
+          <v-button class="v-raised"
                     [config]="{
                       isDisabled: true,
                     }">
-            primary
+            Button
           </v-button>
-
-          <v-button danger
+          <v-button class="v-raised v-primary"
                     [config]="{
                       isDisabled: true,
                     }">
-            danger
+            Button
+          </v-button>
+          <v-button class="v-raised v-accent"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-raised v-danger"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
+          </v-button>
+          <v-button class="v-raised v-primary v-hover"
+                    [config]="{
+                      isDisabled: true,
+                    }">
+            Button
           </v-button>
         </div>
       </section>
 
       <section class="mb-12">
-        <h3 class="mb-6 text-xl font-semibold">Icon Buttons (Hidden Label)</h3>
+        <h3 class="mb-6 text-xl font-semibold">Icon Buttons</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button primary
+          <v-button class="v-primary"
                     [config]="{
                       isLabelHidden: true,
                       padding: 2,
@@ -204,7 +339,7 @@
                     [name]="Icon.Mic" />
           </v-button>
 
-          <v-button danger
+          <v-button class="v-danger"
                     [config]="{
                       isLabelHidden: true,
                       padding: 2,
@@ -213,7 +348,7 @@
                     [name]="Icon.Close" />
           </v-button>
 
-          <v-button raised
+          <v-button class="v-accent"
                     [config]="{
                       isLabelHidden: true,
                       padding: 2,
@@ -222,7 +357,7 @@
                     [name]="Icon.Add" />
           </v-button>
 
-          <v-button flat
+          <v-button class="v-flat v-hover v-primary"
                     [config]="{
                       isLabelHidden: true,
                       padding: 2,
@@ -236,22 +371,30 @@
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Buttons with Icons and Text</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button primary>
+          <v-button class="v-flat">
             <v-icon v-prefix
                     [name]="Icon.Add" />
             Add Item
           </v-button>
 
-          <v-button danger>
-            <v-icon v-prefix
-                    [name]="Icon.Delete" />
-            Delete
+          <v-button class="v-primary">
+            Next
+            <v-icon v-postfix
+                    [name]="Icon.KeyboardArrowRight" />
           </v-button>
 
-          <v-button raised>
+          <v-button class="v-raised v-accent">
             <v-icon v-prefix
                     [name]="Icon.Edit" />
             Edit
+            <v-icon v-postfix
+                    [name]="Icon.Settings" />
+          </v-button>
+
+          <v-button class="v-link v-danger">
+            Delete
+            <v-icon v-postfix
+                    [name]="Icon.Delete" />
           </v-button>
         </div>
       </section>
@@ -259,7 +402,7 @@
       <section class="mb-12">
         <h3 class="mb-6 text-xl font-semibold">Custom Configuration</h3>
         <div class="flex flex-wrap gap-4">
-          <v-button flat
+          <v-button class="v-flat"
                     [config]="{
                       isWithoutShadow: true,
                       bgOpacity: '0.5',
@@ -269,7 +412,7 @@
                     [size]="8" />
           </v-button>
 
-          <v-button primary
+          <v-button class="v-primary"
                     [config]="{
                       borderRadius: 7,
                       padding: 3,
@@ -277,7 +420,7 @@
             Rounded Button
           </v-button>
 
-          <v-button raised
+          <v-button class="v-raised"
                     [config]="{
                       width: '200px',
                     }">

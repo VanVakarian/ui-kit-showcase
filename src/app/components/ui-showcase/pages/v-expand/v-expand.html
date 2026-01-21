@@ -22,15 +22,15 @@
       <section class="mb-12">
         <h2 class="mb-6 text-2xl font-semibold">Controlled Expand</h2>
 
-        <v-button primary
-                  class="mb-4"
-                  (click)="toggleHiddenPanel()">
+        <v-button-old primary
+                      class="mb-4"
+                      (click)="toggleHiddenPanel()">
           @if (isHiddenPanelExpanded) {
             Hide Panel
           } @else {
             Show Panel
           }
-        </v-button>
+        </v-button-old>
 
         <v-expand outer-shadow-rounded
                   [isExpanded]="isHiddenPanelExpanded">

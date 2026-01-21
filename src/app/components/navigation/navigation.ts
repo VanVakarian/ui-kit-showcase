@@ -3,14 +3,14 @@ import { toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { DeviceInfoService } from '@app/services/device-info.service';
 import { NavigationService } from '@app/services/navigation.service';
-import { VButton } from '@ui-kit/components/v-button/v-button';
+import { VButtonOld } from '@ui-kit/components/v-button/v-button-old';
 import { ButtonStyle } from '@ui-kit/types';
 
 @Component({
   selector: 'navigation',
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss',
-  imports: [VButton],
+  imports: [VButtonOld],
 })
 export class Navigation {
   protected readonly ButtonStyle = ButtonStyle;
@@ -22,7 +22,7 @@ export class Navigation {
   protected readonly isDesktop$$ = computed(() => this.deviceInfoService.isDesktopScreen$$());
 
   protected readonly shouldHideFabButtons$$ = computed(
-    () => !this.isDesktop$$() && this.deviceInfoService.isKeyboardOpen$$()
+    () => !this.isDesktop$$() && this.deviceInfoService.isKeyboardOpen$$(),
   );
 
   private readonly currentRoute$$ = toSignal(this.navigationService.currentRoute$, {

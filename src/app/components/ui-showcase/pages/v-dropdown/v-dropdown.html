@@ -55,10 +55,10 @@
 
       <section class="mb-12">
         <h2 class="mb-6 text-2xl font-semibold">Dropdown in Modal</h2>
-        <v-button raised
-                  (click)="openModal()">
+        <v-button-old raised
+                      (click)="openModal()">
           Open Modal with Dropdown
-        </v-button>
+        </v-button-old>
 
         @if (isModalOpen) {
           <v-modal [config]="{
@@ -82,10 +82,10 @@
 
             <div v-footer
                  class="flex justify-end">
-              <v-button danger
-                        (onClick)="closeModal()">
+              <v-button-old danger
+                            (onClick)="closeModal()">
                 Close
-              </v-button>
+              </v-button-old>
             </div>
 
           </v-modal>

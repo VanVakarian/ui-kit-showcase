@@ -1,18 +1,14 @@
 import { ChangeDetectionStrategy, Component } from '@angular/core';
-import { VButton } from '@ui-kit/components/v-button/v-button';
+import { VButtonOld } from '@ui-kit/components/v-button/v-button-old';
 import { VCard } from '@ui-kit/components/v-card/v-card';
-import {
-  ddExpandDirection,
-  DropdownItem,
-  VDropdown,
-} from '@ui-kit/components/v-dropdown/v-dropdown';
+import { ddExpandDirection, DropdownItem, VDropdown } from '@ui-kit/components/v-dropdown/v-dropdown';
 import { VModal } from '@ui-kit/components/v-modal/v-modal';
 
 @Component({
   selector: 'v-dropdown-page',
   templateUrl: './v-dropdown.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [VDropdown, VButton, VCard, VModal],
+  imports: [VDropdown, VButtonOld, VCard, VModal],
 })
 export class VDropdownPage {
   protected readonly ddExpandDirection = ddExpandDirection;
