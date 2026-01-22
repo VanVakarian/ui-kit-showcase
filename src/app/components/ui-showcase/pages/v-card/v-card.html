@@ -40,8 +40,14 @@
           <h3 class="text-xl font-semibold">Card Title</h3>
           <p>Cards can contain any content including text, buttons, forms, and other components.</p>
           <div class="flex gap-2">
-            <v-button-old primary>Primary Action</v-button-old>
-            <v-button-old flat>Secondary</v-button-old>
+            <v-button class="v-primary"
+                      [config]="{
+                        paddingX: 4,
+                      }">Primary Action</v-button>
+            <v-button class="v-flat"
+                      [config]="{
+                        paddingX: 4,
+                      }">Secondary</v-button>
           </div>
         </v-card>
       </section>

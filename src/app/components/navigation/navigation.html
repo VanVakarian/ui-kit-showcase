@@ -3,16 +3,16 @@
 
     <div class="flex flex-col gap-2">
       @for (button of uiShowcaseButtons$$(); track button.id) {
-        <v-button-old [config]="{
-                        buttonStyle: getButtonStyle(button),
-                        width: '100%',
-                        padding: 2,
-                        textAlign: 'left',
-                      }"
-                      class="menu-item"
-                      (click)="navigateToLink(button.id)">
+        <v-button class="v-link menu-item"
+                  [class.v-primary]="button.selected"
+                  [config]="{
+                    width: '100%',
+                    padding: 2,
+                    textAlign: 'left',
+                  }"
+                  (click)="navigateToLink(button.id)">
           {{ button.id }}
-        </v-button-old>
+        </v-button>
       }
     </div>
 

@@ -95,18 +95,17 @@
           </v-input>
 
           <v-input formControlName="testInput">
-            <v-button-old flat
-                          v-prefix
-                          class="mr-2"
-                          [config]="{
+            <v-button class="v-link v-link-static mr-2"
+                      v-prefix
+                      [config]="{
                         isWithoutShadow: true,
                         bgOpacity: '0.5',
                         padding: 0,
                       }"
-                          (click)="consoleLogFormValue()">
+                      (click)="consoleLogFormValue()">
               <v-icon [name]="Icon.Close"
                       [size]="8" />
-            </v-button-old>
+            </v-button>
             <button v-postfix
                     type="button"
                     class="w-7 h-7">🔍</button>
