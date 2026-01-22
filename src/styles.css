@@ -1,7 +1,7 @@
 @import 'tailwindcss';
 
 :root {
-  --gradient-color: var(--v-color-accent-gradient-light);
+  --gradient-color: var(--v-color-primary-gradient-light);
   --gradient-bg: var(--v-color-bg);
 }
 
