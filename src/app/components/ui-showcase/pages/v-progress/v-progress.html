@@ -34,34 +34,34 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Progress Bar Colors</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Progress Bar Colors</h3>
     <div class="flex flex-col gap-4">
-      <div>
-        <p class="mb-2 text-sm">Default (Primary)</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Default (Primary)</p>
         <v-progress [config]="{
           value: 50,
         }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">.v-primary</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">.v-primary</p>
         <v-progress class="v-primary"
                     [config]="{
                       value: 50,
                     }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">.v-accent</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">.v-accent</p>
         <v-progress class="v-accent"
                     [config]="{
                       value: 50,
                     }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">.v-danger</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">.v-danger</p>
         <v-progress class="v-danger"
                     [config]="{
                       value: 50,
@@ -70,27 +70,27 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Custom Colors</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Custom Colors</h3>
     <div class="flex flex-col gap-4">
-      <div>
-        <p class="mb-2 text-sm">Green</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Green</p>
         <v-progress [config]="{
           value: 50,
           barColor: 'green',
         }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">Red</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Red</p>
         <v-progress [config]="{
           value: 75,
           barColor: 'red',
         }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">#EBACCA</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">#EBACCA</p>
         <v-progress [config]="{
           value: 33,
           barColor: '#EBACCA',
@@ -99,8 +99,8 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">With Values Display</h3>
+  <section>
+    <h3 class="text-xl font-semibold">With Values Display</h3>
     <div class="flex flex-col gap-4">
       <v-progress [config]="{
         barGap: 1,
@@ -122,11 +122,11 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Custom Min/Max Ranges</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Custom Min/Max Ranges</h3>
     <div class="flex flex-col gap-4">
-      <div>
-        <p class="mb-2 text-sm">Range 10-150, value 130</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Range 10-150, value 130</p>
         <v-progress [config]="{
           barGap: 1,
           min: 10,
@@ -136,8 +136,8 @@
         }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">Range 10-150, value 140</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Range 10-150, value 140</p>
         <v-progress [config]="{
           barGap: 1,
           min: 10,
@@ -147,8 +147,8 @@
         }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">Range 10-150, value 149</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Range 10-150, value 149</p>
         <v-progress [config]="{
           barGap: 1,
           min: 10,
@@ -160,11 +160,11 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Edge Cases</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Edge Cases</h3>
     <div class="flex flex-col gap-4">
-      <div>
-        <p class="mb-2 text-sm">Negative value (-25)</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Negative value (-25)</p>
         <v-progress [config]="{
           barGap: 1,
           min: 0,
@@ -174,8 +174,8 @@
         }" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">Value exceeds max (200 of 50-150)</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Value exceeds max (200 of 50-150)</p>
         <v-progress [config]="{
           barGap: 1,
           min: 50,

@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { IconName, VIcon } from '@ui-kit/components/v-icon/v-icon';
 
@@ -5,17 +6,14 @@ import { IconName, VIcon } from '@ui-kit/components/v-icon/v-icon';
   selector: 'v-icon-page',
   templateUrl: './v-icon.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [VIcon],
+  imports: [VIcon, NgTemplateOutlet],
 })
 export class VIconPage {
   protected readonly Icon = IconName;
   protected readonly iconNames = Object.values(IconName);
 
   protected getIconKey(iconName: IconName): string {
-    return (
-      Object.keys(IconName).find((key) => IconName[key as keyof typeof IconName] === iconName) ||
-      iconName
-    );
+    return Object.keys(IconName).find((key) => IconName[key as keyof typeof IconName] === iconName) || iconName;
   }
 
   protected async copyIconName(iconName: IconName): Promise<void> {

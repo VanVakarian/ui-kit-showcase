@@ -1,58 +1,66 @@
-<div v-theme="neumorphic-blue"
-     v-style="neumorphic-style"
-     class="p-8">
-  <h1 class="mb-6 text-3xl font-bold">v-expand</h1>
+<div class="flex flex-row *:p-4 *:w-lg">
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-expand :not(.dark)</h2>
+    <ng-container *ngTemplateOutlet="expandShowcase" />
+  </div>
 
-  <div class="flex flex-row gap-8">
-    <div>
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Basic Expand</h2>
-        <v-expand outer-shadow-rounded>
-          <div v-header
-               class="p-2 cursor-pointer">
-            Click to Expand/Collapse
-          </div>
-          <div v-body
-               class="p-2">
-            <p>This is expandable content that can be toggled.</p>
-          </div>
-        </v-expand>
-      </section>
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="dark flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-expand .dark</h2>
+    <ng-container *ngTemplateOutlet="expandShowcase" />
+  </div>
+</div>
 
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Controlled Expand</h2>
+<ng-template #expandShowcase>
+  <div class="flex flex-col gap-6">
+    <section>
+      <h3 class="text-xl font-semibold">Basic Expand</h3>
+      <v-expand>
+        <div v-header
+             class="p-2">
+          Click to Expand/Collapse
+        </div>
+        <div v-body
+             class="p-2">
+          <p>This is expandable content that can be toggled.</p>
+        </div>
+      </v-expand>
+    </section>
 
-        <v-button class="v-primary mb-4"
-                  [config]="{
-                    paddingX: 4,
-                  }"
-                  (click)="toggleHiddenPanel()">
-          @if (isHiddenPanelExpanded) {
-            Hide Panel
-          } @else {
-            Show Panel
-          }
-        </v-button>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-xl font-semibold">Controlled Expand</h3>
 
-        <v-expand outer-shadow-rounded
-                  [isExpanded]="isHiddenPanelExpanded">
-          <div v-body
-               class="p-2">
-            <p>This panel is controlled by external button state.</p>
-          </div>
-        </v-expand>
-      </section>
+      <v-button class="v-primary"
+                [config]="{
+                  paddingX: 4,
+                }"
+                (click)="toggleHiddenPanel()">
+        @if (isHiddenPanelExpanded) {
+          Hide Panel
+        } @else {
+          Show Panel
+        }
+      </v-button>
 
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Accordion Group</h2>
-        <p class="mb-4 text-gray-600">Only one item in accordion group can be expanded at a time</p>
+      <v-expand [isExpanded]="isHiddenPanelExpanded">
+        <div v-body
+             class="p-2">
+          <p>This panel is controlled by external button state.</p>
+        </div>
+      </v-expand>
+    </section>
 
-        <v-expand accordion="menu-items"
-                  accordionId="item-1"
-                  outer-shadow-rounded
-                  class="mb-2">
-          <h3 v-header
-              class="p-2 cursor-pointer">🍕 Pizza Menu</h3>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-xl font-semibold">Accordion Group</h3>
+      <p>Only one item in accordion group can be expanded at a time</p>
+
+      <v-accordion>
+        <v-expand>
+          <h4 v-header
+              class="p-2">🍕 Pizza Menu</h4>
           <div v-body
                class="p-2">
             <p>Margherita - Classic tomato and mozzarella - $12</p>
@@ -61,15 +69,12 @@
           </div>
         </v-expand>
 
-        <v-expand accordion="menu-items"
-                  accordionId="item-2"
-                  inner-shadow-rounded
-                  class="mb-2">
-          <h3 v-header
-              class="p-2 cursor-pointer">🥗 Daily Specials</h3>
+        <v-expand>
+          <h4 v-header
+              class="p-2">🥗 Daily Specials</h4>
           <div v-body
                class="p-2">
-            <h4>Today's Features:</h4>
+            <h5>Today's Features:</h5>
             <ul>
               <li>Caesar Salad with grilled chicken - $11</li>
               <li>Beef Stroganoff with rice - $16</li>
@@ -78,11 +83,9 @@
           </div>
         </v-expand>
 
-        <v-expand accordion="menu-items"
-                  accordionId="item-3"
-                  outer-shadow-rounded>
-          <h3 v-header
-              class="p-2 cursor-pointer">🍰 Desserts</h3>
+        <v-expand>
+          <h4 v-header
+              class="p-2">🍰 Desserts</h4>
           <div v-body
                class="p-2">
             <p>Tiramisu - $8</p>
@@ -90,49 +93,26 @@
             <p>Ice Cream - $5</p>
           </div>
         </v-expand>
-      </section>
+      </v-accordion>
+    </section>
 
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Dynamic Accordion Items</h2>
-        <div outer-shadow-rounded
-             [shadowBorderRadius]="4">
-          @for (i of [0, 1, 2, 3]; track i) {
-            <v-expand accordion="dynamic-group"
-                      [accordionId]="'dynamic-item-' + i"
-                      class="last:border-b-0 border-b">
-              <div v-header
-                   class="p-3 cursor-pointer">
-                Item {{ i + 1 }}
-              </div>
-              <div v-body
-                   class="p-3">
-                <p>Description for item {{ i + 1 }}.</p>
-                <p>This demonstrates how to create dynamic accordion items using Angular control flow.</p>
-              </div>
-            </v-expand>
-          }
-        </div>
-      </section>
-
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Shadow Variants</h2>
-        <div class="flex flex-col gap-4">
-          <v-expand outer-shadow-rounded>
+    <section class="flex flex-col gap-4">
+      <h3 class="text-xl font-semibold">Dynamic Accordion Items</h3>
+      <v-accordion>
+        @for (i of [0, 1, 2, 3]; track i) {
+          <v-expand>
             <div v-header
-                 class="p-2 cursor-pointer">Outer Shadow Rounded</div>
+                 class="p-3">
+              Item {{ i + 1 }}
+            </div>
             <div v-body
-                 class="p-2">Content with outer shadow</div>
+                 class="p-3">
+              <p>Description for item {{ i + 1 }}.</p>
+              <p>This demonstrates how to create dynamic accordion items using Angular control flow.</p>
+            </div>
           </v-expand>
-
-          <v-expand inner-shadow-rounded>
-            <div v-header
-                 class="p-2 cursor-pointer">Inner Shadow Rounded</div>
-            <div v-body
-                 class="p-2">Content with inner shadow</div>
-          </v-expand>
-        </div>
-      </section>
-    </div>
-    <div class="flex-1"></div>
+        }
+      </v-accordion>
+    </section>
   </div>
-</div>
+</ng-template>

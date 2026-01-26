@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { VButton } from '@ui-kit/components/v-button/v-button';
 import { ddExpandDirection, DropdownItem, VDropdown } from '@ui-kit/components/v-dropdown/v-dropdown';
@@ -7,7 +8,7 @@ import { VModal } from '@ui-kit/components/v-modal/v-modal';
   selector: 'v-modal-page',
   templateUrl: './v-modal.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [VModal, VButton, VDropdown],
+  imports: [VModal, VButton, VDropdown, NgTemplateOutlet],
 })
 export class VModalPage {
   protected isModalOpen: string | null = null;

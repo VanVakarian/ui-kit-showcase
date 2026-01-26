@@ -29,11 +29,11 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Slider Colors</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Slider Colors</h3>
     <div class="flex flex-col gap-4">
-      <div>
-        <p class="mb-2 text-sm">Default (Primary)</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">Default (Primary)</p>
         <v-slider [config]="{
                     min: 0,
                     max: 100,
@@ -42,8 +42,8 @@
                   (valueChange)="singleValue$$.set($event)" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">.v-primary</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">.v-primary</p>
         <v-slider class="v-primary"
                   [config]="{
                     min: 0,
@@ -53,8 +53,8 @@
                   (valueChange)="singleValue$$.set($event)" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">.v-accent</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">.v-accent</p>
         <v-slider class="v-accent"
                   [config]="{
                     min: 0,
@@ -64,8 +64,8 @@
                   (valueChange)="singleValue$$.set($event)" />
       </div>
 
-      <div>
-        <p class="mb-2 text-sm">.v-danger</p>
+      <div class="flex flex-col gap-2">
+        <p class="text-sm">.v-danger</p>
         <v-slider class="v-danger"
                   [config]="{
                     min: 0,
@@ -77,8 +77,8 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Range</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Range</h3>
     <div class="flex flex-col gap-4">
       <v-slider [config]="{
                   min: 0,
@@ -92,8 +92,8 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Range with squarish thumbs</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Range with squarish thumbs</h3>
     <div class="flex flex-col gap-4">
       <v-slider [config]="{
                   min: 0,
@@ -110,8 +110,8 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Range with squarish thumbs (dates)</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Range with squarish thumbs (dates)</h3>
     <div class="flex flex-col gap-4">
       <v-slider [config]="{
                   isRange: true,
@@ -127,8 +127,8 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Range With Negative Values</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Range With Negative Values</h3>
     <div class="flex flex-col gap-4">
       <v-slider [config]="{
                   min: -100,
@@ -143,8 +143,8 @@
     </div>
   </section>
 
-  <section class="mb-12">
-    <h3 class="mb-6 text-xl font-semibold">Custom Size</h3>
+  <section>
+    <h3 class="text-xl font-semibold">Custom Size</h3>
     <div class="flex flex-col gap-4">
       <v-slider [config]="{
                   min: 0,

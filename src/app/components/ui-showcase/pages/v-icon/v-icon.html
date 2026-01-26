@@ -1,62 +1,71 @@
-<div v-theme="neumorphic-blue"
-     v-style="neumorphic-style"
-     class="p-8">
-        <h1 class="mb-6 text-3xl font-bold">v-icon</h1>
+<div class="flex flex-row *:p-4 *:max-w-max">
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-icon :not(.dark)</h2>
+    <ng-container *ngTemplateOutlet="iconShowcase" />
+  </div>
 
-        <div class="flex gap-8 flex-row">
-                <div>
-                        <section class="mb-12">
-                                <h2 class="mb-6 text-2xl font-semibold">All Available Icons</h2>
-                                <p class="mb-4 text-gray-600">Click on any icon to copy its name to clipboard</p>
-
-                                <div class="flex flex-wrap gap-1">
-                                        @for (iconName of iconNames; track iconName) {
-                                                <div (click)="copyIconName(iconName)"
-                                                     class="p-2 text-center rounded cursor-pointer">
-                                                        <v-icon [name]="iconName"
-                                                                [size]="8" />
-                                                        <div class="text-xs">
-                                                                {{ getIconKey(iconName) }}
-                                                        </div>
-                                                </div>
-                                        }
-                                </div>
-                        </section>
-
-                        <section class="mb-12">
-                                <h2 class="mb-6 text-2xl font-semibold">Icon Sizes</h2>
-                                <div class="flex flex-wrap items-center gap-6">
-                                        <v-icon [name]="Icon.Settings"
-                                                [size]="4" />
-                                        <v-icon [name]="Icon.Settings"
-                                                [size]="6" />
-                                        <v-icon [name]="Icon.Settings"
-                                                [size]="8" />
-                                        <v-icon [name]="Icon.Settings"
-                                                [size]="10" />
-                                        <v-icon [name]="Icon.Settings"
-                                                [size]="12" />
-                                </div>
-                        </section>
-
-                        <section class="mb-12">
-                                <h2 class="mb-6 text-2xl font-semibold">Colored Icons</h2>
-                                <div class="flex flex-wrap items-center gap-6">
-                                        <v-icon [name]="Icon.Check"
-                                                [size]="8"
-                                                color="green" />
-                                        <v-icon [name]="Icon.Close"
-                                                [size]="8"
-                                                color="red" />
-                                        <v-icon [name]="Icon.Warning"
-                                                [size]="8"
-                                                color="orange" />
-                                        <v-icon [name]="Icon.Info"
-                                                [size]="8"
-                                                color="blue" />
-                                </div>
-                        </section>
-                </div>
-                <div class="flex-1"></div>
-        </div>
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="dark flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-icon .dark</h2>
+    <ng-container *ngTemplateOutlet="iconShowcase" />
+  </div>
 </div>
+
+<ng-template #iconShowcase>
+  <section class="my-0">
+    <h3 class="my-0 text-xl font-semibold">All Available Icons</h3>
+    <div class="flex flex-col gap-2">
+      <p class="text-gray-600">Click on any icon to copy its name to clipboard</p>
+
+      <div class="flex flex-wrap gap-1">
+        @for (iconName of iconNames; track iconName) {
+          <div (click)="copyIconName(iconName)"
+               class="p-2 text-center rounded cursor-pointer">
+            <v-icon [name]="iconName"
+                    [size]="8" />
+            <div class="text-xs">
+              {{ getIconKey(iconName) }}
+            </div>
+          </div>
+        }
+      </div>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="text-xl font-semibold">Icon Sizes</h3>
+    <div class="flex flex-wrap items-center gap-6">
+      <v-icon [name]="Icon.Settings"
+              [size]="4" />
+      <v-icon [name]="Icon.Settings"
+              [size]="6" />
+      <v-icon [name]="Icon.Settings"
+              [size]="8" />
+      <v-icon [name]="Icon.Settings"
+              [size]="10" />
+      <v-icon [name]="Icon.Settings"
+              [size]="12" />
+    </div>
+  </section>
+
+  <section>
+    <h3 class="text-xl font-semibold">Colored Icons</h3>
+    <div class="flex flex-wrap items-center gap-6">
+      <v-icon [name]="Icon.Check"
+              [size]="8"
+              color="green" />
+      <v-icon [name]="Icon.Close"
+              [size]="8"
+              color="red" />
+      <v-icon [name]="Icon.Warning"
+              [size]="8"
+              color="orange" />
+      <v-icon [name]="Icon.Info"
+              [size]="8"
+              color="blue" />
+    </div>
+  </section>
+</ng-template>
