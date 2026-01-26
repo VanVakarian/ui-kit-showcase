@@ -1,108 +1,141 @@
-<div v-theme="neumorphic-blue"
-     v-style="neumorphic-style"
-     class="p-8">
-  <h1 class="mb-6 text-3xl font-bold">v-checkbox</h1>
+<div class="flex flex-row *:p-4">
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-checkbox :not(.dark)</h2>
+    <ng-container *ngTemplateOutlet="checkboxShowcase" />
+  </div>
 
-  <div class="flex flex-col gap-10">
-    <section>
-      <h2 class="mb-6 text-2xl font-semibold">Checkbox</h2>
-      <div class="flex flex-col gap-4">
-        <v-checkbox [value]="basicChecked$$()"
-                    (valueChange)="basicChecked$$.set($event)">
-          {{ basicChecked$$() ? 'Checked' : 'Unchecked' }}
-        </v-checkbox>
-
-        <v-checkbox [value]="basicUnchecked$$()"
-                    (valueChange)="basicUnchecked$$.set($event)">
-          {{ basicUnchecked$$() ? 'Checked' : 'Unchecked' }}
-        </v-checkbox>
-
-        <v-checkbox [config]="{ isDisabled: true }"
-                    [value]="true">
-          Disabled checked
-        </v-checkbox>
-
-        <v-checkbox [config]="{ isDisabled: true }"
-                    [value]="false">
-          Disabled unchecked
-        </v-checkbox>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="mb-6 text-2xl font-semibold">Switch</h2>
-
-      <div class="flex flex-col gap-4">
-        <v-checkbox [config]="{ mode: 'switch' }"
-                    [value]="switchOn$$()"
-                    (valueChange)="switchOn$$.set($event)">
-          {{ switchOn$$() ? 'Enabled' : 'Disabled' }}
-        </v-checkbox>
-
-        <v-checkbox [config]="{ mode: 'switch', isDisabled: true }"
-                    [value]="true">
-          Disabled
-        </v-checkbox>
-
-        <v-checkbox [config]="{ mode: 'switch' }"
-                    [value]="switchOff$$()"
-                    (valueChange)="switchOff$$.set($event)">
-          {{ switchOff$$() ? 'Enabled' : 'Disabled' }}
-        </v-checkbox>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="mb-6 text-2xl font-semibold">Sizes</h2>
-
-      <div class="flex flex-col gap-4">
-        <v-checkbox [config]="{
-                      size: 5,
-                      checkIconSize: 3,
-                    }"
-                    [value]="basicChecked$$()"
-                    (valueChange)="basicChecked$$.set($event)">
-          {{ basicChecked$$() ? 'Compact on' : 'Compact off' }}
-        </v-checkbox>
-
-        <v-checkbox [config]="{
-                      size: 8,
-                      checkIconSize: 5,
-                    }"
-                    [value]="basicUnchecked$$()"
-                    (valueChange)="basicUnchecked$$.set($event)">
-          {{ basicUnchecked$$() ? 'Large on' : 'Large off' }}
-        </v-checkbox>
-
-        <v-checkbox [config]="{
-                      mode: 'switch',
-                      switchWidth: 16,
-                      switchHeight: 8,
-                      thumbSize: 6,
-                    }"
-                    [value]="switchOn$$()"
-                    (valueChange)="switchOn$$.set($event)">
-          {{ switchOn$$() ? 'Wide switch on' : 'Wide switch off' }}
-        </v-checkbox>
-      </div>
-    </section>
-
-    <section>
-      <h2 class="mb-6 text-2xl font-semibold">Label Position</h2>
-
-      <div class="flex flex-col gap-4">
-        <v-checkbox [config]="{ labelPosition: 'right' }"
-                    [value]="basicChecked$$()"
-                    (valueChange)="basicChecked$$.set($event)">
-          Label on the right
-        </v-checkbox>
-
-        <v-checkbox [config]="{ labelPosition: 'left' }"
-                    [value]="basicUnchecked$$()"
-                    (valueChange)="basicUnchecked$$.set($event)">
-          Label on the left
-        </v-checkbox>
-      </div>
-    </section>
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="dark flex flex-col flex-1 gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-checkbox .dark</h2>
+    <ng-container *ngTemplateOutlet="checkboxShowcase" />
   </div>
 </div>
+
+<ng-template #checkboxShowcase>
+  <section class="my-0">
+    <h3 class="my-0 text-xl font-semibold">Checkbox States</h3>
+    <div class="flex flex-col gap-4">
+      <v-checkbox [value]="basicChecked$$()"
+                  (valueChange)="basicChecked$$.set($event)">
+        Checked
+      </v-checkbox>
+
+      <v-checkbox [value]="basicUnchecked$$()"
+                  (valueChange)="basicUnchecked$$.set($event)">
+        Unchecked
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    isDisabled: true,
+                  }"
+                  [value]="true">
+        Disabled checked
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    isDisabled: true,
+                  }"
+                  [value]="false">
+        Disabled unchecked
+      </v-checkbox>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h3 class="mb-6 text-xl font-semibold">Switch States</h3>
+    <div class="flex flex-col gap-4">
+      <v-checkbox [config]="{
+                    mode: 'switch',
+                    checkIconSize: 5,
+                  }"
+                  [value]="switchOn$$()"
+                  (valueChange)="switchOn$$.set($event)">
+        Enabled
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    mode: 'switch',
+                  }"
+                  [value]="switchOff$$()"
+                  (valueChange)="switchOff$$.set($event)">
+        Disabled
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    mode: 'switch',
+                    isDisabled: true,
+                  }"
+                  [value]="true">
+        Disabled on
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    mode: 'switch',
+                    isDisabled: true,
+                  }"
+                  [value]="false">
+        Disabled off
+      </v-checkbox>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h3 class="mb-6 text-xl font-semibold">Custom Sizes</h3>
+    <div class="flex flex-col gap-4">
+      <v-checkbox [config]="{
+                    borderRadius: 0,
+                    size: 4,
+                    checkIconSize: 6,
+                  }"
+                  [value]="basicChecked$$()"
+                  (valueChange)="basicChecked$$.set($event)">
+        Small square checkbox with large icon
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    borderRadius: 4,
+                    size: 8,
+                    checkIconSize: 3,
+                  }"
+                  [value]="basicUnchecked$$()"
+                  (valueChange)="basicUnchecked$$.set($event)">
+        Large round checkbox with small icon
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    mode: 'switch',
+                    switchWidth: 24,
+                    switchHeight: 8,
+                    thumbSize: 6,
+                  }"
+                  [value]="switchOn$$()"
+                  (valueChange)="switchOn$$.set($event)">
+        Wide boiii
+      </v-checkbox>
+    </div>
+  </section>
+
+  <section class="mb-12">
+    <h3 class="mb-6 text-xl font-semibold">Label Position</h3>
+    <div class="flex flex-col gap-4">
+      <v-checkbox [config]="{
+                    labelPosition: 'right',
+                  }"
+                  [value]="basicChecked$$()"
+                  (valueChange)="basicChecked$$.set($event)">
+        Label on the right
+      </v-checkbox>
+
+      <v-checkbox [config]="{
+                    labelPosition: 'left',
+                  }"
+                  [value]="basicUnchecked$$()"
+                  (valueChange)="basicUnchecked$$.set($event)">
+        Label on the left
+      </v-checkbox>
+    </div>
+  </section>
+</ng-template>

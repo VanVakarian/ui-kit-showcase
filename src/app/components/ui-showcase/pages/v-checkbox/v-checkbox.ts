@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { VCheckbox } from '@ui-kit/components/v-checkbox/v-checkbox';
 
@@ -5,7 +6,7 @@ import { VCheckbox } from '@ui-kit/components/v-checkbox/v-checkbox';
   selector: 'v-checkbox-page',
   templateUrl: './v-checkbox.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [VCheckbox],
+  imports: [NgTemplateOutlet, VCheckbox],
 })
 export class VCheckboxPage {
   protected readonly basicChecked$$ = signal(true);

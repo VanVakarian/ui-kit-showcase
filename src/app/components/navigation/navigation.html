@@ -1,20 +1,18 @@
-@if (isDesktop$$()) {
-  <nav class="flex flex-col h-screen gap-2 pt-2 pb-2 pl-2 pr-2">
+<nav class="flex flex-col h-screen gap-2 pt-2 pb-2 pl-2 pr-2">
 
-    <div class="flex flex-col gap-2">
-      @for (button of uiShowcaseButtons$$(); track button.id) {
-        <v-button class="v-link menu-item"
-                  [class.v-primary]="button.selected"
-                  [config]="{
-                    width: '100%',
-                    padding: 2,
-                    textAlign: 'left',
-                  }"
-                  (click)="navigateToLink(button.id)">
-          {{ button.id }}
-        </v-button>
-      }
-    </div>
+  <div class="flex flex-col gap-2">
+    @for (button of uiShowcaseButtons$$(); track button.id) {
+      <v-button class="v-link menu-item"
+                [class.v-primary]="button.selected"
+                [config]="{
+                  width: '100%',
+                  padding: 2,
+                  textAlign: 'left',
+                }"
+                (click)="navigateToLink(button.id)">
+        {{ button.id }}
+      </v-button>
+    }
+  </div>
 
-  </nav>
-}
+</nav>
