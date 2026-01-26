@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { FormControl, FormGroup, ReactiveFormsModule, Validators } from '@angular/forms';
 import { VButton } from '@ui-kit/components/v-button/v-button';
@@ -8,7 +9,7 @@ import { VInput, VInputAutoSubmitResult } from '@ui-kit/components/v-input/v-inp
   selector: 'v-input-page',
   templateUrl: './v-input.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [VInput, ReactiveFormsModule, VButton, VIcon],
+  imports: [NgTemplateOutlet, VInput, ReactiveFormsModule, VButton, VIcon],
 })
 export class VInputPage {
   protected readonly Icon = IconName;
