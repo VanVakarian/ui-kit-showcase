@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, signal } from '@angular/core';
 import { ProgressBarStyle } from '@ui-kit/components/types';
 import { VSlider } from '@ui-kit/components/v-slider/v-slider';
@@ -6,7 +7,7 @@ import { VSlider } from '@ui-kit/components/v-slider/v-slider';
   selector: 'v-slider-page',
   templateUrl: './v-slider.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [VSlider],
+  imports: [NgTemplateOutlet, VSlider],
 })
 export class VSliderPage {
   protected readonly ProgressBarStyle = ProgressBarStyle;
