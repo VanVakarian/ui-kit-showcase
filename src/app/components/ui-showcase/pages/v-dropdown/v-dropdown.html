@@ -1,103 +1,112 @@
-<div v-theme="neumorphic-blue"
-     v-style="neumorphic-style"
-     class="p-8">
-  <h1 class="mb-6 text-3xl font-bold">v-dropdown</h1>
+<div class="flex flex-row *:p-4 *:w-96">
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-dropdown :not(.dark)</h2>
+    <ng-container *ngTemplateOutlet="dropdownShowcase" />
+  </div>
 
-  <div class="flex flex-row gap-8">
-    <div>
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Basic Dropdown</h2>
-        <v-dropdown label="Select Food Item"
-                    placeholder="Search food items"
-                    class="w-full max-w-md"
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="dark flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-dropdown .dark</h2>
+    <ng-container *ngTemplateOutlet="dropdownShowcase" />
+  </div>
+</div>
+
+<ng-template #dropdownShowcase>
+  <div>
+    <section class="my-0">
+      <h3 class="my-0 text-xl font-semibold">Basic Dropdown</h3>
+      <v-dropdown label="Select Food Item"
+                  placeholder="Search food items"
+                  class="w-full max-w-md"
+                  [items]="foodItems"
+                  (onSelectionChanged)="onFoodItemChange($event)" />
+    </section>
+
+    <section class="mb-12">
+      <h3 class="mb-6 text-xl font-semibold">Dropdown with Custom Width</h3>
+      <v-dropdown label="Select Food Item"
+                  placeholder="Search food items"
+                  class="w-full max-w-md"
+                  [minDropdownWidth]="'300px'"
+                  [items]="foodItems"
+                  (onSelectionChanged)="onFoodItemChange($event)" />
+    </section>
+
+    <section class="mb-12">
+      <h3 class="mb-6 text-xl font-semibold">Dropdown with Expand Direction</h3>
+      <div class="flex flex-wrap gap-4">
+        <v-dropdown label="Expand Left"
+                    placeholder="Search"
+                    class="w-64"
                     [items]="foodItems"
-                    (onSelectionChanged)="onFoodItemChange($event)" />
-      </section>
-
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Dropdown with Custom Width</h2>
-        <v-dropdown label="Select Food Item"
-                    placeholder="Search food items"
-                    class="w-full max-w-md"
                     [minDropdownWidth]="'300px'"
-                    [items]="foodItems"
+                    [expandDirection]="ddExpandDirection.Left"
                     (onSelectionChanged)="onFoodItemChange($event)" />
-      </section>
 
+        <v-dropdown label="Expand Right"
+                    placeholder="Search"
+                    class="w-64"
+                    [items]="foodItems"
+                    [expandDirection]="ddExpandDirection.Right"
+                    (onSelectionChanged)="onFoodItemChange($event)" />
+      </div>
+    </section>
+
+    @if (selectedFoodItem) {
       <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Dropdown with Expand Direction</h2>
-        <div class="flex flex-wrap gap-4">
-          <v-dropdown label="Expand Left"
-                      placeholder="Search"
-                      class="w-64"
+        <h3 class="mb-6 text-xl font-semibold">Selected Item</h3>
+        <v-card>
+          <p><strong>Selected:</strong> {{ selectedFoodItem }}</p>
+        </v-card>
+      </section>
+    }
+
+    <section class="mb-12">
+      <h3 class="mb-6 text-xl font-semibold">Dropdown in Modal</h3>
+      <v-button class="v-raised"
+                [config]="{
+                  paddingX: 4,
+                }"
+                (click)="openModal()">
+        Open Modal with Dropdown
+      </v-button>
+
+      @if (isModalOpen) {
+        <v-modal [config]="{
+                   isOpen: isModalOpen,
+                   width: '500px',
+                   borderRadius: 3,
+                 }"
+                 (onClose)="closeModal()">
+
+          <div v-header>
+            <h3 class="m-0">Select from Dropdown</h3>
+          </div>
+
+          <v-dropdown label="Select Food Item"
+                      placeholder="Search food items"
+                      class="w-full"
                       [items]="foodItems"
                       [minDropdownWidth]="'300px'"
                       [expandDirection]="ddExpandDirection.Left"
                       (onSelectionChanged)="onFoodItemChange($event)" />
 
-          <v-dropdown label="Expand Right"
-                      placeholder="Search"
-                      class="w-64"
-                      [items]="foodItems"
-                      [expandDirection]="ddExpandDirection.Right"
-                      (onSelectionChanged)="onFoodItemChange($event)" />
-        </div>
-      </section>
+          <div v-footer
+               class="flex justify-end">
+            <v-button class="v-danger"
+                      [config]="{
+                        paddingX: 4,
+                      }"
+                      (onClick)="closeModal()">
+              Close
+            </v-button>
+          </div>
 
-      @if (selectedFoodItem) {
-        <section class="mb-12">
-          <h2 class="mb-6 text-2xl font-semibold">Selected Item</h2>
-          <v-card>
-            <p><strong>Selected:</strong> {{ selectedFoodItem }}</p>
-          </v-card>
-        </section>
+        </v-modal>
       }
-
-      <section class="mb-12">
-        <h2 class="mb-6 text-2xl font-semibold">Dropdown in Modal</h2>
-        <v-button class="v-raised"
-                  [config]="{
-                    paddingX: 4,
-                  }"
-                  (click)="openModal()">
-          Open Modal with Dropdown
-        </v-button>
-
-        @if (isModalOpen) {
-          <v-modal [config]="{
-                     isOpen: isModalOpen,
-                     width: '500px',
-                     borderRadius: 3,
-                   }"
-                   (onClose)="closeModal()">
-
-            <div v-header>
-              <h3 class="m-0">Select from Dropdown</h3>
-            </div>
-
-            <v-dropdown label="Select Food Item"
-                        placeholder="Search food items"
-                        class="w-full"
-                        [items]="foodItems"
-                        [minDropdownWidth]="'300px'"
-                        [expandDirection]="ddExpandDirection.Left"
-                        (onSelectionChanged)="onFoodItemChange($event)" />
-
-            <div v-footer
-                 class="flex justify-end">
-              <v-button class="v-danger"
-                        [config]="{
-                          paddingX: 4,
-                        }"
-                        (onClick)="closeModal()">
-                Close
-              </v-button>
-            </div>
-
-          </v-modal>
-        }
-      </section>
-    </div>
-    <div class="flex-1"></div>
+    </section>
   </div>
-</div>
+</ng-template>

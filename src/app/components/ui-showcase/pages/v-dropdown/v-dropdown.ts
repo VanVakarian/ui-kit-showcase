@@ -1,3 +1,4 @@
+import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component } from '@angular/core';
 import { VButton } from '@ui-kit/components/v-button/v-button';
 import { VCard } from '@ui-kit/components/v-card/v-card';
@@ -8,7 +9,7 @@ import { VModal } from '@ui-kit/components/v-modal/v-modal';
   selector: 'v-dropdown-page',
   templateUrl: './v-dropdown.html',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [VDropdown, VButton, VCard, VModal],
+  imports: [NgTemplateOutlet, VDropdown, VButton, VCard, VModal],
 })
 export class VDropdownPage {
   protected readonly ddExpandDirection = ddExpandDirection;
