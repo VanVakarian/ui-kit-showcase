@@ -35,8 +35,6 @@
             ],
             "styles": [
               "src/ui-kit/styles/vars.css",
-              "src/ui-kit/styles/neumorphic-style.css",
-              "src/ui-kit/styles/neumorphic-blue.css",
               "src/ui-kit/styles/flat-style.css",
               "src/ui-kit/styles/flat-blue.css",
               "src/styles.css"
