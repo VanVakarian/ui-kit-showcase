@@ -1,8 +1,6 @@
 @import 'tailwindcss';
 
 :root {
-  --gradient-color: var(--v-color-primary-gradient-light);
-  --gradient-bg: var(--v-color-bg);
 }
 
 * {
@@ -14,5 +12,4 @@ body {
   margin: 0;
   padding: 0;
   height: 100%;
-  background-color: var(--v-color-bg);
 }

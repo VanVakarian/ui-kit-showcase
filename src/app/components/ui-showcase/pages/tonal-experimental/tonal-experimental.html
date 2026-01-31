@@ -1,0 +1,168 @@
+<div class="flex flex-row *:w-full">
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="flex flex-col gap-6">
+    <h2 class="p-4 mb-0 text-2xl font-semibold">home :not(.dark)</h2>
+    <ng-container *ngTemplateOutlet="homePage" />
+  </div>
+
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="dark flex flex-col gap-6">
+    <h2 class="p-4 mb-0 text-2xl font-semibold">home .dark</h2>
+    <ng-container *ngTemplateOutlet="homePage" />
+  </div>
+</div>
+
+<ng-template #homePage>
+  <!-- <div class="flex flex-col gap-4">
+    <div class="bg-[var(--color-surface-level-1)]">menu</div>
+    <div class="flex gap-4">
+      <div class="bg-[var(--color-surface-level-1)]">submenu</div>
+      <div class="">content</div>
+    </div>
+  </div> -->
+
+  <div #container
+       class="flex flex-col gap-4 p-6 rounded-lg"
+       [style.background]="level0Color$$()">
+    <h3 class="mb-0 text-lg font-semibold">Surface Level Color Tuner</h3>
+
+    <div class="flex items-center gap-4">
+      <div class="flex items-center justify-center w-24 text-sm font-semibold">Level 0</div>
+
+      <div class="color-tuner flex-1">
+        <div class="slider-control">
+          <div class="slider-label">
+            <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
+            <span class="slider-value">{{ level0Base$$() }}%</span>
+          </div>
+          <v-slider [config]="{
+                      valueList: percentValues,
+                      barStyle: ProgressBarStyle.Flat,
+                    }"
+                    [value]="level0Base$$()"
+                    (valueChange)="level0Base$$.set($event)" />
+        </div>
+
+        <div class="slider-control">
+          <div class="slider-label">
+            <span>Primary</span>
+            <span class="slider-value">{{ level0Primary$$() }}%</span>
+          </div>
+          <v-slider [config]="{
+                      valueList: percentValues,
+                      barStyle: ProgressBarStyle.Flat,
+                    }"
+                    [value]="level0Primary$$()"
+                    (valueChange)="level0Primary$$.set($event)" />
+        </div>
+      </div>
+    </div>
+
+    <div class="flex flex-col gap-4 p-4 rounded-lg"
+         [style.background]="level1Color$$()">
+      <div class="flex items-center gap-4">
+        <div class="flex items-center justify-center w-24 text-sm font-semibold">Level 1</div>
+
+        <div class="color-tuner flex-1">
+          <div class="slider-control">
+            <div class="slider-label">
+              <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
+              <span class="slider-value">{{ level1Base$$() }}%</span>
+            </div>
+            <v-slider [config]="{
+                        valueList: percentValues,
+                        barStyle: ProgressBarStyle.Flat,
+                      }"
+                      [value]="level1Base$$()"
+                      (valueChange)="level1Base$$.set($event)" />
+          </div>
+
+          <div class="slider-control">
+            <div class="slider-label">
+              <span>Primary</span>
+              <span class="slider-value">{{ level1Primary$$() }}%</span>
+            </div>
+            <v-slider [config]="{
+                        valueList: percentValues,
+                        barStyle: ProgressBarStyle.Flat,
+                      }"
+                      [value]="level1Primary$$()"
+                      (valueChange)="level1Primary$$.set($event)" />
+          </div>
+        </div>
+      </div>
+
+      <div class="flex flex-col gap-4 p-4 rounded-lg"
+           [style.background]="level2Color$$()">
+        <div class="flex items-center gap-4">
+          <div class="flex items-center justify-center w-24 text-sm font-semibold">Level 2</div>
+
+          <div class="color-tuner flex-1">
+            <div class="slider-control">
+              <div class="slider-label">
+                <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
+                <span class="slider-value">{{ level2Base$$() }}%</span>
+              </div>
+              <v-slider [config]="{
+                          valueList: percentValues,
+                          barStyle: ProgressBarStyle.Flat,
+                        }"
+                        [value]="level2Base$$()"
+                        (valueChange)="level2Base$$.set($event)" />
+            </div>
+
+            <div class="slider-control">
+              <div class="slider-label">
+                <span>Primary</span>
+                <span class="slider-value">{{ level2Primary$$() }}%</span>
+              </div>
+              <v-slider [config]="{
+                          valueList: percentValues,
+                          barStyle: ProgressBarStyle.Flat,
+                        }"
+                        [value]="level2Primary$$()"
+                        (valueChange)="level2Primary$$.set($event)" />
+            </div>
+          </div>
+        </div>
+
+        <div class="flex flex-col gap-4 p-4 rounded-lg"
+             [style.background]="level3Color$$()">
+          <div class="flex items-center gap-4">
+            <div class="flex items-center justify-center w-24 text-sm font-semibold">Level 3</div>
+
+            <div class="color-tuner flex-1">
+              <div class="slider-control">
+                <div class="slider-label">
+                  <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
+                  <span class="slider-value">{{ level3Base$$() }}%</span>
+                </div>
+                <v-slider [config]="{
+                            valueList: percentValues,
+                            barStyle: ProgressBarStyle.Flat,
+                          }"
+                          [value]="level3Base$$()"
+                          (valueChange)="level3Base$$.set($event)" />
+              </div>
+
+              <div class="slider-control">
+                <div class="slider-label">
+                  <span>Primary</span>
+                  <span class="slider-value">{{ level3Primary$$() }}%</span>
+                </div>
+                <v-slider [config]="{
+                            valueList: percentValues,
+                            barStyle: ProgressBarStyle.Flat,
+                          }"
+                          [value]="level3Primary$$()"
+                          (valueChange)="level3Primary$$.set($event)" />
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</ng-template>
