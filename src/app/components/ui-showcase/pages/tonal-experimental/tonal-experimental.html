@@ -26,7 +26,10 @@
   <div #container
        class="flex flex-col gap-4 p-6 rounded-lg"
        [style.background]="level0Color$$()">
-    <h3 class="mb-0 text-lg font-semibold">Surface Level Color Tuner</h3>
+    <div class="flex items-center justify-between">
+      <h3 class="mb-0 text-lg font-semibold">Surface Level Color Tuner</h3>
+      <v-button (click)="resetToDefaults()">Reset to Default</v-button>
+    </div>
 
     <div class="flex items-center gap-4">
       <div class="flex items-center justify-center w-24 text-sm font-semibold">Level 0</div>

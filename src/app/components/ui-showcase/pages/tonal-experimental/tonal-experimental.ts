@@ -1,6 +1,7 @@
 import { NgTemplateOutlet } from '@angular/common';
 import { ChangeDetectionStrategy, Component, computed, effect, ElementRef, signal, viewChild } from '@angular/core';
 import { ProgressBarStyle } from '@ui-kit/components/types';
+import { VButton } from '@ui-kit/components/v-button/v-button';
 import { IconName } from '@ui-kit/components/v-icon/v-icon';
 import { VSlider } from '@ui-kit/components/v-slider/v-slider';
 
@@ -26,7 +27,7 @@ interface HomeStorageState {
   templateUrl: './tonal-experimental.html',
   styleUrl: './tonal-experimental.scss',
   changeDetection: ChangeDetectionStrategy.OnPush,
-  imports: [NgTemplateOutlet, VSlider],
+  imports: [NgTemplateOutlet, VSlider, VButton],
 })
 export class TonalExperimental {
   protected readonly Icon = IconName;
@@ -176,5 +177,16 @@ export class TonalExperimental {
     if (num > 100) return 100;
 
     return Math.round(num);
+  }
+
+  protected resetToDefaults(): void {
+    this.level0Base$$.set(this.defaultState.level0Base);
+    this.level0Primary$$.set(this.defaultState.level0Primary);
+    this.level1Base$$.set(this.defaultState.level1Base);
+    this.level1Primary$$.set(this.defaultState.level1Primary);
+    this.level2Base$$.set(this.defaultState.level2Base);
+    this.level2Primary$$.set(this.defaultState.level2Primary);
+    this.level3Base$$.set(this.defaultState.level3Base);
+    this.level3Primary$$.set(this.defaultState.level3Primary);
   }
 }
