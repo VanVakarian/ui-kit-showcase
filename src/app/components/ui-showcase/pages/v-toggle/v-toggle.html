@@ -1,0 +1,67 @@
+<div class="flex flex-row *:p-4 *:w-96">
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-toggle :not(.dark)</h2>
+    <ng-container *ngTemplateOutlet="toggleShowcase" />
+  </div>
+
+  <div v-style="flat-style"
+       v-theme="flat-blue"
+       class="dark flex flex-col gap-6">
+    <h2 class="mb-0 text-2xl font-semibold">v-toggle .dark</h2>
+    <ng-container *ngTemplateOutlet="toggleShowcase" />
+  </div>
+</div>
+
+<ng-template #toggleShowcase>
+  <section class="my-0">
+    <h3 class="my-0 text-xl font-semibold">Single Selection</h3>
+    <div class="flex flex-col gap-4">
+      <v-toggle [items]="transactionOptions"
+                [value]="transactionSelection$$()"
+                (valueChange)="transactionSelection$$.set($event)"></v-toggle>
+
+      <v-toggle [items]="sizeOptions"
+                [value]="singleSelection$$()"
+                (valueChange)="singleSelection$$.set($event)"></v-toggle>
+
+      <v-toggle [items]="viewOptions"
+                [value]="viewSelection$$()"
+                (valueChange)="viewSelection$$.set($event)"></v-toggle>
+    </div>
+  </section>
+
+  <section>
+    <h3 class="text-xl font-semibold">Multiple Selection</h3>
+    <v-toggle [items]="filterOptions"
+              [config]="{
+                isMultiple: true,
+              }"
+              [value]="multiSelection$$()"
+              (valueChange)="multiSelection$$.set($event)"></v-toggle>
+  </section>
+
+  <section>
+    <h3 class="text-xl font-semibold">Disabled State</h3>
+    <v-toggle [items]="sizeOptions"
+              [config]="{
+                isDisabled: true,
+              }"
+              [value]="disabledSelection$$()"></v-toggle>
+  </section>
+
+  <section>
+    <h3 class="text-xl font-semibold">Custom Styling</h3>
+    <v-toggle [items]="filterOptions"
+              [config]="{
+                isMultiple: true,
+                activeClass: 'v-accent',
+                inactiveClass: 'v-flat v-hover',
+                gap: 2,
+                padding: 2,
+              }"
+              [value]="multiSelection$$()"
+              (valueChange)="multiSelection$$.set($event)"></v-toggle>
+  </section>
+</ng-template>

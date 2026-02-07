@@ -10,6 +10,7 @@ import { VInputPage } from '@app/components/ui-showcase/pages/v-input/v-input';
 import { VModalPage } from '@app/components/ui-showcase/pages/v-modal/v-modal';
 import { VProgressPage } from '@app/components/ui-showcase/pages/v-progress/v-progress';
 import { VSliderPage } from '@app/components/ui-showcase/pages/v-slider/v-slider';
+import { VTogglePage } from '@app/components/ui-showcase/pages/v-toggle/v-toggle';
 
 export type PagePath = (typeof pages)[number]['path'];
 
@@ -24,6 +25,7 @@ export const pages = [
   { path: 'v-modal', component: VModalPage },
   { path: 'v-progress', component: VProgressPage },
   { path: 'v-slider', component: VSliderPage },
+  { path: 'v-toggle', component: VTogglePage },
   { path: 'tonal-exp', component: TonalExperimental },
 ] as const;
 
