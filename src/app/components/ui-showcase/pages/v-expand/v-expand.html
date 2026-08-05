@@ -34,9 +34,7 @@
       <h3 class="text-xl font-semibold">Controlled Expand</h3>
 
       <v-button class="v-primary"
-                [config]="{
-                  paddingX: 4,
-                }"
+                [paddingX]="4"
                 (click)="toggleHiddenPanel()">
         @if (isHiddenPanelExpanded) {
           Hide Panel

@@ -4,11 +4,9 @@
     @for (button of uiShowcaseButtons$$(); track button.id) {
       <v-button class="v-link menu-item"
                 [class.v-primary]="button.selected"
-                [config]="{
-                  width: '100%',
-                  padding: 2,
-                  textAlign: 'left',
-                }"
+                [width]="'100%'"
+                [padding]="2"
+                [textAlign]="'left'"
                 (click)="navigateToLink(button.id)">
         {{ button.id }}
       </v-button>

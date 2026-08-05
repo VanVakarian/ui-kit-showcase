@@ -28,16 +28,12 @@
         Unchecked
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    isDisabled: true,
-                  }"
+      <v-checkbox [isDisabled]="true"
                   [value]="true">
         Disabled checked
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    isDisabled: true,
-                  }"
+      <v-checkbox [isDisabled]="true"
                   [value]="false">
         Disabled unchecked
       </v-checkbox>
@@ -47,35 +43,27 @@
   <section>
     <h3 class="text-xl font-semibold">Switch States</h3>
     <div class="flex flex-col gap-4">
-      <v-checkbox [config]="{
-                    mode: 'switch',
-                    checkIconSize: 5,
-                  }"
+      <v-checkbox [mode]="'switch'"
+                  [checkIconSize]="5"
                   [value]="switchOn$$()"
                   (valueChange)="switchOn$$.set($event)">
         Enabled
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    mode: 'switch',
-                  }"
+      <v-checkbox [mode]="'switch'"
                   [value]="switchOff$$()"
                   (valueChange)="switchOff$$.set($event)">
         Disabled
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    mode: 'switch',
-                    isDisabled: true,
-                  }"
+      <v-checkbox [mode]="'switch'"
+                  [isDisabled]="true"
                   [value]="true">
         Disabled on
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    mode: 'switch',
-                    isDisabled: true,
-                  }"
+      <v-checkbox [mode]="'switch'"
+                  [isDisabled]="true"
                   [value]="false">
         Disabled off
       </v-checkbox>
@@ -85,32 +73,26 @@
   <section>
     <h3 class="text-xl font-semibold">Custom Sizes</h3>
     <div class="flex flex-col gap-4">
-      <v-checkbox [config]="{
-                    borderRadius: 0,
-                    size: 4,
-                    checkIconSize: 6,
-                  }"
+      <v-checkbox [borderRadius]="0"
+                  [size]="4"
+                  [checkIconSize]="6"
                   [value]="basicChecked$$()"
                   (valueChange)="basicChecked$$.set($event)">
         Small square checkbox with large icon
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    borderRadius: 4,
-                    size: 8,
-                    checkIconSize: 3,
-                  }"
+      <v-checkbox [borderRadius]="4"
+                  [size]="8"
+                  [checkIconSize]="3"
                   [value]="basicUnchecked$$()"
                   (valueChange)="basicUnchecked$$.set($event)">
         Large round checkbox with small icon
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    mode: 'switch',
-                    switchWidth: 24,
-                    switchHeight: 8,
-                    thumbSize: 6,
-                  }"
+      <v-checkbox [mode]="'switch'"
+                  [switchWidth]="24"
+                  [switchHeight]="8"
+                  [thumbSize]="6"
                   [value]="switchOn$$()"
                   (valueChange)="switchOn$$.set($event)">
         Wide boiii
@@ -121,17 +103,13 @@
   <section>
     <h3 class="text-xl font-semibold">Label Position</h3>
     <div class="flex flex-col gap-4">
-      <v-checkbox [config]="{
-                    labelPosition: 'right',
-                  }"
+      <v-checkbox [labelPosition]="'right'"
                   [value]="basicChecked$$()"
                   (valueChange)="basicChecked$$.set($event)">
         Label on the right
       </v-checkbox>
 
-      <v-checkbox [config]="{
-                    labelPosition: 'left',
-                  }"
+      <v-checkbox [labelPosition]="'left'"
                   [value]="basicUnchecked$$()"
                   (valueChange)="basicUnchecked$$.set($event)">
         Label on the left

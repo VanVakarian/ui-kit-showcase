@@ -46,9 +46,7 @@
         <div class="text-slate-500 text-sm font-semibold">{{ style.label }}</div>
         @for (role of buttonRoles; track role.label) {
           <v-button [class]="style.class + ' ' + role.class"
-                    [config]="{
-                      isDisabled: true,
-                    }">
+                    [isDisabled]="true">
             Button
           </v-button>
         }
@@ -60,37 +58,29 @@
     <h3 class="text-xl font-semibold">Icon Buttons</h3>
     <div class="flex flex-wrap gap-4">
       <v-button class="v-primary"
-                [config]="{
-                  isLabelHidden: true,
-                  padding: 2,
-                }">
+                [isLabelHidden]="true"
+                [padding]="2">
         <v-icon v-prefix
                 [name]="Icon.Mic" />
       </v-button>
 
       <v-button class="v-danger"
-                [config]="{
-                  isLabelHidden: true,
-                  padding: 2,
-                }">
+                [isLabelHidden]="true"
+                [padding]="2">
         <v-icon v-prefix
                 [name]="Icon.Close" />
       </v-button>
 
       <v-button class="v-accent"
-                [config]="{
-                  isLabelHidden: true,
-                  padding: 2,
-                }">
+                [isLabelHidden]="true"
+                [padding]="2">
         <v-icon v-prefix
                 [name]="Icon.Add" />
       </v-button>
 
       <v-button class="v-flat v-hover v-primary"
-                [config]="{
-                  isLabelHidden: true,
-                  padding: 2,
-                }">
+                [isLabelHidden]="true"
+                [padding]="2">
         <v-icon v-prefix
                 [name]="Icon.Settings" />
       </v-button>
@@ -132,26 +122,20 @@
     <h3 class="text-xl font-semibold">Custom Configuration</h3>
     <div class="flex flex-wrap gap-4">
       <v-button class="v-flat"
-                [config]="{
-                  bgOpacity: '0.5',
-                  padding: 0,
-                }">
+                [bgOpacity]="0.5"
+                [padding]="0">
         <v-icon [name]="Icon.Close"
                 [size]="8" />
       </v-button>
 
       <v-button class="v-primary"
-                [config]="{
-                  borderRadius: 7,
-                  padding: 3,
-                }">
+                [borderRadius]="7"
+                [padding]="3">
         Rounded Button
       </v-button>
 
       <v-button class="v-raised"
-                [config]="{
-                  width: '200px',
-                }">
+                [width]="'200px'">
         Full Width
       </v-button>
 

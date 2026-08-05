@@ -40,10 +40,8 @@
             <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
             <span class="slider-value">{{ level0Base$$() }}%</span>
           </div>
-          <v-slider [config]="{
-                      valueList: percentValues,
-                      barStyle: ProgressBarStyle.Flat,
-                    }"
+          <v-slider [valueList]="percentValues"
+                    [barStyle]="ProgressBarStyle.Flat"
                     [value]="level0Base$$()"
                     (valueChange)="level0Base$$.set($event)" />
         </div>
@@ -53,10 +51,8 @@
             <span>Primary</span>
             <span class="slider-value">{{ level0Primary$$() }}%</span>
           </div>
-          <v-slider [config]="{
-                      valueList: percentValues,
-                      barStyle: ProgressBarStyle.Flat,
-                    }"
+          <v-slider [valueList]="percentValues"
+                    [barStyle]="ProgressBarStyle.Flat"
                     [value]="level0Primary$$()"
                     (valueChange)="level0Primary$$.set($event)" />
         </div>
@@ -74,10 +70,8 @@
               <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
               <span class="slider-value">{{ level1Base$$() }}%</span>
             </div>
-            <v-slider [config]="{
-                        valueList: percentValues,
-                        barStyle: ProgressBarStyle.Flat,
-                      }"
+            <v-slider [valueList]="percentValues"
+                      [barStyle]="ProgressBarStyle.Flat"
                       [value]="level1Base$$()"
                       (valueChange)="level1Base$$.set($event)" />
           </div>
@@ -87,10 +81,8 @@
               <span>Primary</span>
               <span class="slider-value">{{ level1Primary$$() }}%</span>
             </div>
-            <v-slider [config]="{
-                        valueList: percentValues,
-                        barStyle: ProgressBarStyle.Flat,
-                      }"
+            <v-slider [valueList]="percentValues"
+                      [barStyle]="ProgressBarStyle.Flat"
                       [value]="level1Primary$$()"
                       (valueChange)="level1Primary$$.set($event)" />
           </div>
@@ -108,10 +100,8 @@
                 <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
                 <span class="slider-value">{{ level2Base$$() }}%</span>
               </div>
-              <v-slider [config]="{
-                          valueList: percentValues,
-                          barStyle: ProgressBarStyle.Flat,
-                        }"
+              <v-slider [valueList]="percentValues"
+                        [barStyle]="ProgressBarStyle.Flat"
                         [value]="level2Base$$()"
                         (valueChange)="level2Base$$.set($event)" />
             </div>
@@ -121,10 +111,8 @@
                 <span>Primary</span>
                 <span class="slider-value">{{ level2Primary$$() }}%</span>
               </div>
-              <v-slider [config]="{
-                          valueList: percentValues,
-                          barStyle: ProgressBarStyle.Flat,
-                        }"
+              <v-slider [valueList]="percentValues"
+                        [barStyle]="ProgressBarStyle.Flat"
                         [value]="level2Primary$$()"
                         (valueChange)="level2Primary$$.set($event)" />
             </div>
@@ -142,10 +130,8 @@
                   <span>{{ isDark$$() ? 'Black' : 'White' }}</span>
                   <span class="slider-value">{{ level3Base$$() }}%</span>
                 </div>
-                <v-slider [config]="{
-                            valueList: percentValues,
-                            barStyle: ProgressBarStyle.Flat,
-                          }"
+                <v-slider [valueList]="percentValues"
+                          [barStyle]="ProgressBarStyle.Flat"
                           [value]="level3Base$$()"
                           (valueChange)="level3Base$$.set($event)" />
               </div>
@@ -155,10 +141,8 @@
                   <span>Primary</span>
                   <span class="slider-value">{{ level3Primary$$() }}%</span>
                 </div>
-                <v-slider [config]="{
-                            valueList: percentValues,
-                            barStyle: ProgressBarStyle.Flat,
-                          }"
+                <v-slider [valueList]="percentValues"
+                          [barStyle]="ProgressBarStyle.Flat"
                           [value]="level3Primary$$()"
                           (valueChange)="level3Primary$$.set($event)" />
               </div>

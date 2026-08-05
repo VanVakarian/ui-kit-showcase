@@ -35,9 +35,7 @@
   <section>
     <h3 class="text-xl font-semibold">Multiple Selection</h3>
     <v-toggle [items]="filterOptions"
-              [config]="{
-                isMultiple: true,
-              }"
+              [isMultiple]="true"
               [value]="multiSelection$$()"
               (valueChange)="multiSelection$$.set($event)"></v-toggle>
   </section>
@@ -45,22 +43,18 @@
   <section>
     <h3 class="text-xl font-semibold">Disabled State</h3>
     <v-toggle [items]="sizeOptions"
-              [config]="{
-                isDisabled: true,
-              }"
+              [isDisabled]="true"
               [value]="disabledSelection$$()"></v-toggle>
   </section>
 
   <section>
     <h3 class="text-xl font-semibold">Custom Styling</h3>
     <v-toggle [items]="filterOptions"
-              [config]="{
-                isMultiple: true,
-                activeClass: 'v-accent',
-                inactiveClass: 'v-flat v-hover',
-                gap: 2,
-                padding: 2,
-              }"
+              [isMultiple]="true"
+              [activeColorClass]="'v-accent'"
+              [inactiveColorClass]="'v-flat v-hover'"
+              [gap]="2"
+              [padding]="2"
               [value]="multiSelection$$()"
               (valueChange)="multiSelection$$.set($event)"></v-toggle>
   </section>

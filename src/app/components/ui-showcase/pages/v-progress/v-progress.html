@@ -20,17 +20,11 @@
     <div class="flex flex-col gap-4">
       <v-progress />
 
-      <v-progress [config]="{
-        value: 33,
-      }" />
+      <v-progress [value]="33" />
 
-      <v-progress [config]="{
-        value: 66,
-      }" />
+      <v-progress [value]="66" />
 
-      <v-progress [config]="{
-        value: 100,
-      }" />
+      <v-progress [value]="100" />
     </div>
   </section>
 
@@ -39,33 +33,25 @@
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <p class="text-sm">Default (Primary)</p>
-        <v-progress [config]="{
-          value: 50,
-        }" />
+        <v-progress [value]="50" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">.v-primary</p>
         <v-progress class="v-primary"
-                    [config]="{
-                      value: 50,
-                    }" />
+                    [value]="50" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">.v-accent</p>
         <v-progress class="v-accent"
-                    [config]="{
-                      value: 50,
-                    }" />
+                    [value]="50" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">.v-danger</p>
         <v-progress class="v-danger"
-                    [config]="{
-                      value: 50,
-                    }" />
+                    [value]="50" />
       </div>
     </div>
   </section>
@@ -75,26 +61,20 @@
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <p class="text-sm">Green</p>
-        <v-progress [config]="{
-          value: 50,
-          barColor: 'green',
-        }" />
+        <v-progress [value]="50"
+                    [barColor]="'green'" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">Red</p>
-        <v-progress [config]="{
-          value: 75,
-          barColor: 'red',
-        }" />
+        <v-progress [value]="75"
+                    [barColor]="'red'" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">#EBACCA</p>
-        <v-progress [config]="{
-          value: 33,
-          barColor: '#EBACCA',
-        }" />
+        <v-progress [value]="33"
+                    [barColor]="'#EBACCA'" />
       </div>
     </div>
   </section>
@@ -102,23 +82,17 @@
   <section>
     <h3 class="text-xl font-semibold">With Values Display</h3>
     <div class="flex flex-col gap-4">
-      <v-progress [config]="{
-        barGap: 1,
-        value: 50,
-        isShowValues: true,
-      }" />
+      <v-progress [barGap]="1"
+                  [value]="50"
+                  [isShowValues]="true" />
 
-      <v-progress [config]="{
-        barGap: 1,
-        value: 75,
-        isShowValues: true,
-      }" />
+      <v-progress [barGap]="1"
+                  [value]="75"
+                  [isShowValues]="true" />
 
-      <v-progress [config]="{
-        barGap: 1,
-        value: 100,
-        isShowValues: true,
-      }" />
+      <v-progress [barGap]="1"
+                  [value]="100"
+                  [isShowValues]="true" />
     </div>
   </section>
 
@@ -127,35 +101,29 @@
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <p class="text-sm">Range 10-150, value 130</p>
-        <v-progress [config]="{
-          barGap: 1,
-          min: 10,
-          max: 150,
-          value: 130,
-          isShowValues: true,
-        }" />
+        <v-progress [barGap]="1"
+                    [min]="10"
+                    [max]="150"
+                    [value]="130"
+                    [isShowValues]="true" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">Range 10-150, value 140</p>
-        <v-progress [config]="{
-          barGap: 1,
-          min: 10,
-          max: 150,
-          value: 140,
-          isShowValues: true,
-        }" />
+        <v-progress [barGap]="1"
+                    [min]="10"
+                    [max]="150"
+                    [value]="140"
+                    [isShowValues]="true" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">Range 10-150, value 149</p>
-        <v-progress [config]="{
-          barGap: 1,
-          min: 10,
-          max: 150,
-          value: 149,
-          isShowValues: true,
-        }" />
+        <v-progress [barGap]="1"
+                    [min]="10"
+                    [max]="150"
+                    [value]="149"
+                    [isShowValues]="true" />
       </div>
     </div>
   </section>
@@ -165,24 +133,20 @@
     <div class="flex flex-col gap-4">
       <div class="flex flex-col gap-2">
         <p class="text-sm">Negative value (-25)</p>
-        <v-progress [config]="{
-          barGap: 1,
-          min: 0,
-          max: 100,
-          value: -25,
-          isShowValues: true,
-        }" />
+        <v-progress [barGap]="1"
+                    [min]="0"
+                    [max]="100"
+                    [value]="-25"
+                    [isShowValues]="true" />
       </div>
 
       <div class="flex flex-col gap-2">
         <p class="text-sm">Value exceeds max (200 of 50-150)</p>
-        <v-progress [config]="{
-          barGap: 1,
-          min: 50,
-          max: 150,
-          value: 200,
-          isShowValues: true,
-        }" />
+        <v-progress [barGap]="1"
+                    [min]="50"
+                    [max]="150"
+                    [value]="200"
+                    [isShowValues]="true" />
       </div>
     </div>
   </section>

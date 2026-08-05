@@ -25,19 +25,15 @@
 
   <section>
     <h3 class="text-xl font-semibold">Compact Card</h3>
-    <v-card [config]="{
-              borderRadius: 1,
-              padding: 1,
-            }">
+    <v-card [borderRadius]="1"
+            [padding]="1">
       Compact card with smaller border radius and padding
     </v-card>
   </section>
 
   <section>
     <h3 class="text-xl font-semibold">Card Without Border Radius</h3>
-    <v-card [config]="{
-              borderRadius: 0,
-            }"
+    <v-card [borderRadius]="0"
             class="flex flex-col gap-2">
       <div>Card with no border radius (sharp corners)</div>
       <p>Useful for stacking cards or creating grid layouts.</p>
@@ -51,15 +47,11 @@
       <p>Cards can contain any content including text, buttons, forms, and other components.</p>
       <div class="flex gap-2">
         <v-button class="v-primary"
-                  [config]="{
-                    paddingX: 4,
-                  }">
+                  [paddingX]="4">
           Primary Action
         </v-button>
         <v-button class="v-flat"
-                  [config]="{
-                    paddingX: 4,
-                  }">
+                  [paddingX]="4">
           Secondary
         </v-button>
       </div>
@@ -69,15 +61,11 @@
   <section>
     <h3 class="text-xl font-semibold">Custom Padding</h3>
     <div class="flex flex-col gap-4">
-      <v-card [config]="{
-                padding: 0,
-              }">
+      <v-card [padding]="0">
         <div class="p-4">Card with padding: 0 (manual padding applied)</div>
       </v-card>
 
-      <v-card [config]="{
-                padding: 4,
-              }">
+      <v-card [padding]="4">
         <div>Card with padding: 4 (extra padding)</div>
       </v-card>
     </div>
@@ -86,33 +74,23 @@
   <section>
     <h3 class="text-xl font-semibold">Card with Various Border Radius</h3>
     <div class="flex flex-col gap-4">
-      <v-card [config]="{
-                borderRadius: 0,
-              }">
+      <v-card [borderRadius]="0">
         borderRadius: 0
       </v-card>
 
-      <v-card [config]="{
-                borderRadius: 1,
-              }">
+      <v-card [borderRadius]="1">
         borderRadius: 1
       </v-card>
 
-      <v-card [config]="{
-                borderRadius: 2,
-              }">
+      <v-card [borderRadius]="2">
         borderRadius: 2 (default)
       </v-card>
 
-      <v-card [config]="{
-                borderRadius: 3,
-              }">
+      <v-card [borderRadius]="3">
         borderRadius: 3
       </v-card>
 
-      <v-card [config]="{
-                borderRadius: 5,
-              }">
+      <v-card [borderRadius]="5">
         borderRadius: 5
       </v-card>
     </div>

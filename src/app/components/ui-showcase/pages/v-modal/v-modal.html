@@ -18,25 +18,19 @@
   <section class="my-0">
     <h3 class="my-0 text-xl font-semibold">Basic Modal</h3>
     <v-button class="v-raised"
-              [config]="{
-                paddingX: 4,
-              }"
+              [paddingX]="4"
               (click)="openModal('basic')">
       Open Basic Modal
     </v-button>
 
     @if (isModalOpen === 'basic') {
-      <v-modal [config]="{
-                 isOpen: true,
-               }"
+      <v-modal [isOpen]="true"
                (onClose)="closeModal()">
         <div class="flex flex-col gap-4">
           <h2 class="text-xl font-semibold">Modal Title</h2>
           <p>This is a basic modal with simple content.</p>
           <v-button class="v-danger"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="closeModal()">Close</v-button>
         </div>
       </v-modal>
@@ -46,19 +40,15 @@
   <section>
     <h3 class="text-xl font-semibold">Modal with Header and Footer</h3>
     <v-button class="v-raised"
-              [config]="{
-                paddingX: 4,
-              }"
+              [paddingX]="4"
               (click)="openModal('headerFooter')">
       Open Modal with Sections
     </v-button>
 
     @if (isModalOpen === 'headerFooter') {
-      <v-modal [config]="{
-                 isOpen: true,
-                 width: '500px',
-                 borderRadius: 3,
-               }"
+      <v-modal [isOpen]="true"
+               [width]="'500px'"
+               [borderRadius]="3"
                (onClose)="closeModal()">
         <div v-header>
           <h3 class="m-0">Modal Header</h3>
@@ -72,14 +62,10 @@
         <div v-footer
              class="flex justify-end gap-2">
           <v-button class="v-flat"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="closeModal()">Cancel</v-button>
           <v-button class="v-danger"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="closeModal()">Confirm</v-button>
         </div>
       </v-modal>
@@ -89,19 +75,15 @@
   <section>
     <h3 class="text-xl font-semibold">Modal with Long Content</h3>
     <v-button class="v-raised"
-              [config]="{
-                paddingX: 4,
-              }"
+              [paddingX]="4"
               (click)="openModal('longContent')">
       Open Modal with Scrollable Content
     </v-button>
 
     @if (isModalOpen === 'longContent') {
-      <v-modal [config]="{
-                 isOpen: true,
-                 width: '500px',
-                 borderRadius: 3,
-               }"
+      <v-modal [isOpen]="true"
+               [width]="'500px'"
+               [borderRadius]="3"
                (onClose)="closeModal()">
         <div v-header>
           <h3 class="m-0">Long Content Modal</h3>
@@ -109,9 +91,7 @@
 
         <div class="p-4">
           <v-button class="v-raised"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="isShowLongContent = !isShowLongContent">
             {{ isShowLongContent ? 'Hide' : 'Show' }} long content
           </v-button>
@@ -126,9 +106,7 @@
         <div v-footer
              class="flex justify-end">
           <v-button class="v-danger"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="closeModal()">
             Close
           </v-button>
@@ -140,19 +118,15 @@
   <section>
     <h3 class="text-xl font-semibold">Modal with Dropdown</h3>
     <v-button class="v-raised"
-              [config]="{
-                paddingX: 4,
-              }"
+              [paddingX]="4"
               (click)="openModal('dropdown')">
       Open Modal with Dropdown
     </v-button>
 
     @if (isModalOpen === 'dropdown') {
-      <v-modal [config]="{
-                 isOpen: true,
-                 width: '500px',
-                 borderRadius: 3,
-               }"
+      <v-modal [isOpen]="true"
+               [width]="'500px'"
+               [borderRadius]="3"
                (onClose)="closeModal()">
         <div v-header>
           <h3 class="m-0">Select Item</h3>
@@ -175,9 +149,7 @@
         <div v-footer
              class="flex justify-end">
           <v-button class="v-danger"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="closeModal()">
             Close
           </v-button>
@@ -190,52 +162,40 @@
     <h3 class="text-xl font-semibold">Custom Width and Border Radius</h3>
     <div class="flex flex-wrap gap-4">
       <v-button class="v-raised"
-                [config]="{
-                  paddingX: 4,
-                }"
+                [paddingX]="4"
                 (click)="openModal('small')">
         Small Modal (300px)
       </v-button>
       <v-button class="v-raised"
-                [config]="{
-                  paddingX: 4,
-                }"
+                [paddingX]="4"
                 (click)="openModal('large')">
         Large Modal (800px)
       </v-button>
     </div>
 
     @if (isModalOpen === 'small') {
-      <v-modal [config]="{
-                 isOpen: true,
-                 width: '300px',
-                 borderRadius: 1,
-               }"
+      <v-modal [isOpen]="true"
+               [width]="'300px'"
+               [borderRadius]="1"
                (onClose)="closeModal()">
         <div class="p-4 flex flex-col gap-4">
           <p>Small modal with custom width</p>
           <v-button class="v-danger"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="closeModal()">Close</v-button>
         </div>
       </v-modal>
     }
 
     @if (isModalOpen === 'large') {
-      <v-modal [config]="{
-                 isOpen: true,
-                 width: '800px',
-                 borderRadius: 5,
-               }"
+      <v-modal [isOpen]="true"
+               [width]="'800px'"
+               [borderRadius]="5"
                (onClose)="closeModal()">
         <div class="p-4 flex flex-col gap-4">
           <p>Large modal with custom width and larger border radius</p>
           <v-button class="v-danger"
-                    [config]="{
-                      paddingX: 4,
-                    }"
+                    [paddingX]="4"
                     (onClick)="closeModal()">Close</v-button>
         </div>
       </v-modal>
