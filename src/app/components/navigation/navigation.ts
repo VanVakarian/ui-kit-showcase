@@ -1,4 +1,4 @@
-import { Component, computed, inject } from '@angular/core';
+import { ChangeDetectionStrategy, Component, computed, inject } from '@angular/core';
 import { toSignal } from '@angular/core/rxjs-interop';
 import { Router } from '@angular/router';
 import { DeviceInfoService } from '@app/services/device-info.service';
@@ -9,6 +9,7 @@ import { VButton } from '@ui-kit/components/v-button/v-button';
   selector: 'navigation',
   templateUrl: './navigation.html',
   styleUrl: './navigation.scss',
+  changeDetection: ChangeDetectionStrategy.Eager,
   imports: [VButton],
 })
 export class Navigation {

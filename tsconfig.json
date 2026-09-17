@@ -14,13 +14,12 @@
     "importHelpers": true,
     "target": "ES2022",
     "module": "preserve",
-    "baseUrl": "./",
     "paths": {
       "@app/*": [
-        "src/app/*"
+        "./src/app/*"
       ],
       "@ui-kit/*": [
-        "src/ui-kit/*"
+        "./src/ui-kit/*"
       ]
     }
   },
